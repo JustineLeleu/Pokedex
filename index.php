@@ -1,7 +1,7 @@
 
 <?php 
 $title = "Home";
-require_once __DIR__.'/partials/header.php';
+require_once __DIR__.'/php/partials/header.php';
 ?>
 
 <main>
@@ -11,5 +11,5 @@ require_once __DIR__.'/partials/header.php';
 </main>
 
 <?php 
-require_once __DIR__.'/partials/footer.php';
+require_once __DIR__.'/php/partials/footer.php';
 ?>
