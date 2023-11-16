@@ -5,6 +5,7 @@ This file is used to contain all vendor imports.
 This file is used to contain all abstracts imports.
 Files inside this folder can contain abstract settings, helpers or functions. They have no direct output.
 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&display=swap");
 /*
 This file is used to contain all base imports.
 Files inside this folder can contain global styles used in the project.
@@ -42,6 +43,7 @@ body {
   width: 100vh;
   height: 80vh;
   margin: 0 auto;
+  margin-top: 20vh;
 }
 
 .loginfo {
@@ -62,4 +64,39 @@ body {
 /*
 This file is used to contain all component imports.
 Files inside this folder can contain specific element styles and layout. 
-*//*# sourceMappingURL=style.css.map */
+*/
+body {
+  background-color: #f3f4f6;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.header .logo {
+  width: 200px;
+}
+.header .nav {
+  background-color: white;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: 0px 0px 2px 0px #e5e7eb;
+}
+.header .nav .link {
+  text-decoration: none;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: black;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+}/*# sourceMappingURL=style.css.map */

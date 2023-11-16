@@ -9,19 +9,29 @@
         </style>
     </head>
     <body>
-        <div class="login">
-            <h2>My Account</h2>
-            <form method="GET">
-                <label class="log" for="email">Email*</label>
-                <br>
-                <input type="text" class="loginfo" name="email" id="email">
-                <br>
-                <label class="log" for="password">Password*</label>
-                <br>
-                <input type="text" class="loginfo" name="password" id="password">
-                <br>
-                <input class="submit" type="submit" name="submit" value="Connexion">
-            </form>
-        </div>
+        <?php
+            include 'header.php';
+        ?>
+        <main>
+            <div class="login">
+                <h2>My Account</h2>
+                <form method="GET">
+                    <label class="log" for="email">Email*</label>
+                    <br>
+                    <input type="text" class="loginfo" name="email" id="email">
+                    <br>
+                    <label class="log" for="password">Password*</label>
+                    <br>
+                    <input type="text" class="loginfo" name="password" id="password">
+                    <br>
+                    <input class="submit" type="submit" name="submit" value="Connexion">
+                </form>
+            </div>
+        </main>
+        <footer>
+            <?php
+                include 'footer.php';
+            ?>
+        </footer>
     </body>
 </html>
