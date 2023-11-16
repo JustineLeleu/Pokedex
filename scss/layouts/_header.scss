@@ -12,7 +12,7 @@ body
 
     .logo
     {
-        width: 200px;
+        width: 100px;
     }
 
     .nav
@@ -21,18 +21,38 @@ body
         width: 100vw;
         display: flex;
         justify-content: center;
-        gap: 20px;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        gap: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
         box-shadow: 0px 0px 2px 0px $lightGrey;
 
         .link
         {
             text-decoration: none;
             font-family: 'Noto Sans JP', sans-serif;
-            font-size: 12px;
+            font-size: 8px;
             font-weight: 600;
             color: black;
+        }
+    }
+
+    @media screen and (min-width: 425px)
+    {
+        .logo
+        {
+            width: 200px;
+        }
+
+        .nav
+        {
+            gap: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            .link
+            {
+                font-size: 12px;
+            }
         }
     }
 }
