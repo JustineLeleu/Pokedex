@@ -1,8 +1,4 @@
-body {
-    background-color: #F3F4F6;
-}
-
-.login {
+.register {
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -15,7 +11,7 @@ body {
     margin-top: 10vh;
 }
 
-.loginfo {
+.reginfo {
     background-color: #E5E7EB;
     border: none;
     width: 80vh;
