@@ -13,6 +13,13 @@ Files inside this folder can contain global styles used in the project.
 This file is used to contain all component imports.
 Files inside this folder should contain all styles relating to a reusable component.
 */
+.card-container {
+  width: 25%;
+}
+.card-container img {
+  width: 50%;
+}
+
 /*
 This file is used to contain all component imports.
 Files inside this folder can contain specific element styles and layout. 
