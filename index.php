@@ -1,6 +1,6 @@
 <?php
 
-include("partials/header.php");
-include("partials/footer.php");
+include("php/partials/header.php");
+include("php/partials/footer.php");
 
 ?>
