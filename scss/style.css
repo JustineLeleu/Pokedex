@@ -1,0 +1,65 @@
+/*
+This file is used to contain all vendor imports.
+*/
+/*
+This file is used to contain all abstracts imports.
+Files inside this folder can contain abstract settings, helpers or functions. They have no direct output.
+*/
+/*
+This file is used to contain all base imports.
+Files inside this folder can contain global styles used in the project.
+*/
+.login h2 {
+  font-family: "Noto Sans JP";
+  font-weight: 900;
+}
+.login .log {
+  font-family: "Noto Sans JP";
+  font-weight: 700;
+  font-size: 3vh;
+}
+.login .submit {
+  font-family: "Noto Sans JP";
+  font-weight: 900;
+  font-size: 2.5vh;
+}
+
+/*
+This file is used to contain all component imports.
+Files inside this folder should contain all styles relating to a reusable component.
+*/
+body {
+  background-color: #F3F4F6;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 10px;
+  width: 100vh;
+  height: 80vh;
+  margin: 0 auto;
+}
+
+.loginfo {
+  background-color: #E5E7EB;
+  border: none;
+  width: 80vh;
+  height: 7.5vh;
+  margin-bottom: 6vh;
+}
+
+.submit {
+  background-color: #E5E7EB;
+  border: none;
+  width: 20vh;
+  height: 10vh;
+}
+
+/*
+This file is used to contain all component imports.
+Files inside this folder can contain specific element styles and layout. 
+*//*# sourceMappingURL=style.css.map */
