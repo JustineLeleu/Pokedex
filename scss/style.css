@@ -190,8 +190,7 @@ body {
   fill: yellow;
 }
 .addfav:active {
-  fill: white;
-  color: yellow;
+  fill: yellow;
 }
 
 /*
