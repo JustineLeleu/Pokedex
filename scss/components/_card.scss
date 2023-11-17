@@ -32,11 +32,13 @@
 
         .card-type-container {
             @include display-flex-center-column;
+            
 
             .card-type-content {
                 @include display-flex-center-row;
-                margin: 0 10px;
+                margin: 5px 10px;
                 padding: 5px 10px;
+                border-radius: 10px;
 
                 p {
                     padding-left: 10px;
@@ -58,6 +60,9 @@
             .card-type-container {
                 @include display-flex-center-row;
                 // flex-direction: row;
+                .card-type-content {
+                    margin: 0 10px;
+                }
             }
         }
     }
