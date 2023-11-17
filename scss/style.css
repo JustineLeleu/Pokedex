@@ -46,6 +46,27 @@ Files inside this folder can contain global styles used in the project.
   font-size: 2.5vh;
 }
 
+.NewPkmn h2 {
+  font-family: "Noto Sans JP";
+  font-weight: 900;
+  margin-bottom: 5vh;
+}
+.NewPkmn .new {
+  font-family: "Noto Sans JP";
+  font-weight: 700;
+  font-size: 3vh;
+}
+.NewPkmn select {
+  font-family: "Noto Sans JP";
+  font-weight: 600;
+  font-size: 3vh;
+}
+.NewPkmn .submit {
+  font-family: "Noto Sans JP";
+  font-weight: 900;
+  font-size: 2.5vh;
+}
+
 /*
 This file is used to contain all component imports.
 Files inside this folder should contain all styles relating to a reusable component.
@@ -191,6 +212,39 @@ body {
 }
 .addfav:active {
   fill: yellow;
+}
+
+.NewPkmn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 10px;
+  width: 100vh;
+  height: 280vh;
+  margin: 0 auto;
+  margin-top: 10vh;
+}
+
+.formulaire {
+  display: flex;
+  flex-direction: column;
+}
+
+.infonewpkmn {
+  background-color: #E5E7EB;
+  border: none;
+  width: 80vh;
+  height: 7.5vh;
+  margin-bottom: 6vh;
+}
+
+.submit {
+  background-color: #E5E7EB;
+  border: none;
+  width: 20vh;
+  height: 10vh;
 }
 
 /*
