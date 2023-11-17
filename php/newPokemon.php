@@ -1,5 +1,5 @@
 <?php
-    include 'header.php';
+    include './partials/header.php';
 ?>
 
 <link href="/scss/style.css" type="text/css" rel="stylesheet">
@@ -93,7 +93,7 @@
 </div>
 
 <?php
-    include 'footer.php';
+    include './partials/footer.php';
 
     try {
         $pdo = new PDO('mysql:host=localhost;dbname=pokedex', 'root', '');
