@@ -1,6 +1,6 @@
 <?php 
 $title = "Infos";
-require_once __DIR__.'/header.php';
+require_once __DIR__.'/partials/header.php';
 ?>
 
 <main class="infosContainer">
@@ -19,51 +19,51 @@ require_once __DIR__.'/header.php';
         <div class="stats">
             <div class="stat">
                 <label for="HP">HP</label>
-                <input type="range" name="HP" min="0" max="100" value="90" step="10"/>
+                <input type="range" class="slider" name="HP" min="0" max="100" value="90" step="10"/>
             </div>
             <div class="stat">
                 <label for="attack">Attack</label>
-                <input type="range" name="attack" min="0" max="100" value="90" step="10"/>
+                <input type="range" class="slider" name="attack" min="0" max="100" value="90" step="10"/>
             </div>
             <div class="stat">
                 <label for="defense">Defense</label>
-                <input type="range" name="defense" min="0" max="100" value="90" step="10"/>
+                <input type="range" class="slider" name="defense" min="0" max="100" value="90" step="10"/>
             </div>
             <div class="stat">
                 <label for="attackSpe">Specific Attack</label>
-                <input type="range" name="attackSpe" min="0" max="100" value="90" step="10"/>
+                <input type="range" class="slider" name="attackSpe" min="0" max="100" value="90" step="10"/>
             </div>
             <div class="stat">
                 <label for="defenseSpe">Specific Defense</label>
-                <input type="range" name="defenseSpe" min="0" max="100" value="90" step="10"/>
+                <input type="range" class="slider" name="defenseSpe" min="0" max="100" value="90" step="10"/>
             </div>
             <div class="stat">
                 <label for="speed">Speed</label>
-                <input type="range" name="speed" min="0" max="100" value="90" step="10"/>
+                <input type="range" class="slider" name="speed" min="0" max="100" value="90" step="10"/>
             </div>
         </div>
-        <h3>Evolution</h2>
+        <h3>Evolution</h3>
         <div class="evolutions">
-            <div>
+            <div class="evolution">
                 <img src="/assets/img/pokemon/bulbasaur.png" alt="Pokemon image">
                 <h4>Bulbasaur</h4>
             </div>
-            <div>
+            <div class="evolution">
                 <img src="../../assets/img/pokemon/ivysaur.png" alt="Pokemon image">
                 <h4>Ivysaur</h4>
             </div>
-            <div>
+            <div class="evolution">
                 <img src="../../assets/img/pokemon/venusaur.png" alt="Pokemon image">
                 <h4>Venusaur</h4>
             </div>
         </div>
     </div>
-    <div class="img">
+    <div class="infoImage">
+        <div class="num">#0001</div>
         <img src="/assets/img/pokemon/bulbasaur.png" alt="Pokemon image">
-        <div>#0001</div>
     </div>
 </main>
 
 <?php 
-require_once __DIR__.'/footer.php';
+require_once __DIR__.'/partials/footer.php';
 ?>

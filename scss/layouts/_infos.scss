@@ -1,13 +1,97 @@
 .infosContainer
 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 2% 10% 2% 10%;
 
     .infos
     {
         background-color: white;
+        border-radius: 5px;
+        box-shadow: 0px 0px 2px 0px $lightGrey;
+        padding: 20px;
 
         h2 
         {
-            color: red;
+            
+        }
+        .types
+        {
+            display: flex;
+            gap: 10px;
+
+            .card-type-content
+            {
+                background-color: green;
+                display: flex;
+                border-radius: 5px;
+                padding: 2px;
+                gap: 5px;
+
+                img 
+                {
+                    width: 20px;
+                }
+            }
+        }
+
+        .stats
+        {
+
+            .stat
+            {
+                display: flex;
+                flex-direction: column;
+
+                .slider 
+                {
+                    accent-color: $lightGrey;
+                }
+            }
+        }
+
+        .evolutions
+        {
+            display: flex;
+            justify-content: space-around;
+
+            .evolution
+            {
+
+                img 
+                {
+                    width: 50px;
+                    background-color: $lightGrey;
+                    border-radius: 25px;
+                }
+            }
+        }
+    }
+
+    .infoImage
+    {
+        position: relative;
+
+        img 
+        {
+            position: absolute;
+            width: 300px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .num
+        {
+            position: absolute;
+            left: 50%;
+            top: 20%;
+            transform: translate(-50%, -50%);
+            color: $lightGrey;
+            font-size: 150px;
+            font-weight: 800;
         }
     }
 }
