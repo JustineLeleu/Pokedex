@@ -1,8 +1,39 @@
+<link href="/scss/style.css" type="text/css" rel="stylesheet">
+
 <?php
     include './partials/header.php';
+
+    try {
+        $bdd = new PDO('mysql:host=localhost;dbname=pokedex', 'root', '');
+        $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        if ($_SERVER['REQUEST_METHOD']==='POST') {
+            $id=$_POST['pkmid'];
+            $name=$_POST['pkmname'];
+            $type1=$_POST['pkmtype1'];
+            $type2=$_POST['pkmtype2'];
+            $hp=$_POST['pkmhp'];
+            $attack=$_POST['pkmattack'];
+            $defense=$_POST['pkmdefense'];
+            $spatt=$_POST['pkmspatt'];
+            $spedef=$_POST['pkmspedef'];
+            $speed=$_POST['pkmspeed'];
+            $evo1=$_POST['pkmevo1'];
+            $evo2=$_POST['pkmevo2'];
+            $image=$_POST['pkmimage'];
+
+            $stmt = $bdd->prepare('INSERT INTO pokemon (idPokemon, nom, type1, type2, hp, attack, defense, specific_attack, specific_defense, speed, evo1, evo2, image) VALUES (:idPokemon, :nom, :type1, :type2, :hp, :attack, :defense, :specific_attack, :specific_defense, :speed, :evo1, :evo2, :image)');
+            $stmt->execute([':idPokemon' => $id, ':nom' => $name, ':type1' => $type1, ':type2' => $type2, ':hp' => $hp, ':attack' => $attack, ':defense' => $defense, ':specific_attack' => $spatt, ':specific_defense' => $spedef, ':speed' => $speed, ':evo1' => $evo1, ':evo2' => $evo2, ':image' => $image]);
+
+            echo '<h3 class="good">Yeah! Your new Pokemon has been added correctly!</h3>';
+        }
+
+    } catch (Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
 ?>
 
-<link href="/scss/style.css" type="text/css" rel="stylesheet">
+
 
 <div class="NewPkmn">
     <h2>New Pokemon</h2>
@@ -14,8 +45,8 @@
             <label class="new" for="pkmname">Pokemon name:</label>
             <input type="text" class="infonewpkmn" name="pkmname" id="pkmname" required>
             
-            <label class="new" for="pkmtyp1">Pokemon Type 1:</label>
-            <select class="infonewpkmn" name="pkmtyp1" id="id" required>
+            <label class="new" for="pkmtype1">Pokemon Type 1:</label>
+            <select class="infonewpkmn" name="pkmtype1" id="id" required>
                 <option value="1">Acier</option>
                 <option value="2">Combat</option>
                 <option value="3">Dragon</option>
@@ -37,7 +68,7 @@
             </select>
 
             <label class="new" for="pkmtype2">Pokemon Type 2:</label>
-            <select class="infonewpkmn" name="pkmtype2" id="pkmtype2" required>
+            <select class="infonewpkmn" name="pkmtype2" id="pkmtype2">
                 <option value="">None</option>
                 <option value="1">Acier</option>
                 <option value="2">Combat</option>
@@ -78,14 +109,14 @@
             <input type="text" class="infonewpkmn" name="pkmspeed" id="pkmspeed" required>
 
             
-            <label class="new" for="pkmevo1">First Evolution:</label>
+            <label class="new" for="pkmevo1">First Evolution (ID):</label>
             <input type="text" class="infonewpkmn" name="pkmevo1" id="pkmevo1">
 
-            <label class="new" for="pkmevo2">Second Evolution:</label>
-            <input type="text" class="infonewpkmn" name="pkmevo2" id="pkmevo1">
+            <label class="new" for="pkmevo2">Second Evolution (ID):</label>
+            <input type="text" class="infonewpkmn" name="pkmevo2" id="pkmevo2">
 
             <label class="new" for="pkmimage">Pokemon Image:</label>
-            <input type="file" class="infonewpkmn" name="pkmimage" id="pkmimage" required>
+            <input type="text" class="infonewpkmn" name="pkmimage" id="pkmimage" required>
 
             <input class="submit" type="submit" name="submit" value="Add a Pokemon">
         </div>
@@ -94,12 +125,4 @@
 
 <?php
     include './partials/footer.php';
-
-    try {
-        $pdo = new PDO('mysql:host=localhost;dbname=pokedex', 'root', '');
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch (Exception $e) {
-        die('Erreur : ' . $e->getMessage());
-    }
-
 ?>
