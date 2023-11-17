@@ -46,7 +46,7 @@
 
 <?php
 
-$pdo = new PDO('mysql:host=localhost;dbname=crud1', 'root', '');
+$pdo = new PDO('mysql:host=localhost;dbname=pokedex', 'root', 'root');
 
 function validateAndSanitizeRegister($_post) {
 
@@ -89,7 +89,7 @@ function validateAndSanitizeRegister($_post) {
 function dataInjection() {
     try{
     $sanitizedData = validateAndSanitizeRegister($_POST);
-    $sqlreq = $pdo->prepare("INSERT INTO `pokedexuser`(`pseudo`, `mail`, `passeword`, `admin`) VALUES ('[value-1]','[value-2]','[value-3]','0')");
+    $sqlreq = $pdo->prepare("INSERT INTO `pokedexuser`(`pseudo`, `mail`, `passeword`, `admin`) VALUES '$pseudo','$password','$email','0' WHERE NOT EXISTS (SELECT * FROM `pokedexuser` WHERE `mail` = '$email')");
     $pdo->exec($sqlReq);
     } catch (PDOException $e) {
         echo $e->getMessage();
