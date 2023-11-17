@@ -10,7 +10,7 @@
     </head>
     <body>
         <?php
-            include 'header.php';
+            include './partials/header.php';
         ?>
         <main>
             <div class="register">
@@ -34,7 +34,7 @@
         </main>
         <footer>
             <?php
-                include 'footer.php';
+                include './partials/footer.php';
             ?>
         </footer>
     </body>
