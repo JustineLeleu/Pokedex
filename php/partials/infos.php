@@ -3,7 +3,7 @@ $title = "Infos";
 require_once __DIR__.'/header.php';
 ?>
 
-<main class="main">
+<main class="infosContainer">
     <div class="infos">
         <h2>Bulbasaur</h2>
         <div class="types">

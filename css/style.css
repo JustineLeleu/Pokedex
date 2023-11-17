@@ -238,4 +238,10 @@ body {
   .footer {
     font-size: 12px;
   }
+}
+.infosContainer .infos {
+  background-color: white;
+}
+.infosContainer .infos h2 {
+  color: red;
 }/*# sourceMappingURL=style.css.map */
