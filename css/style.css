@@ -46,6 +46,27 @@ Files inside this folder can contain global styles used in the project.
   font-size: 2.5vh;
 }
 
+.NewPkmn h2 {
+  font-family: "Noto Sans JP";
+  font-weight: 900;
+  margin-bottom: 5vh;
+}
+.NewPkmn .new {
+  font-family: "Noto Sans JP";
+  font-weight: 700;
+  font-size: 3vh;
+}
+.NewPkmn select {
+  font-family: "Noto Sans JP";
+  font-weight: 600;
+  font-size: 3vh;
+}
+.NewPkmn .submit {
+  font-family: "Noto Sans JP";
+  font-weight: 900;
+  font-size: 2.5vh;
+}
+
 /*
 This file is used to contain all component imports.
 Files inside this folder should contain all styles relating to a reusable component.
@@ -184,6 +205,16 @@ body {
     margin: 0 10px;
   }
 }
+@media only screen and (min-width: 612px) {
+  .card-container {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 612px) {
+  .card-container {
+    width: 80%;
+  }
+}
 .pokemon-grid {
   position: relative;
   top: 150px;
@@ -195,16 +226,60 @@ body {
     top: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
   }
 }
 @media only screen and (min-width: 1024px) {
   .pokemon-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
+.addfav {
+  border: none;
+  background-color: white;
+  font-size: 20vh;
+  fill: #e5e7eb;
+}
+.addfav:hover {
+  fill: yellow;
+}
+.addfav:active {
+  fill: yellow;
+}
+
+.NewPkmn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 10px;
+  width: 100vh;
+  height: 280vh;
+  margin: 0 auto;
+  margin-top: 10vh;
+}
+
+.formulaire {
+  display: flex;
+  flex-direction: column;
+}
+
+.infonewpkmn {
+  background-color: #E5E7EB;
+  border: none;
+  width: 80vh;
+  height: 7.5vh;
+  margin-bottom: 6vh;
+}
+
+.submit {
+  background-color: #E5E7EB;
+  border: none;
+  width: 20vh;
+  height: 10vh;
+}
+
 /*
 This file is used to contain all component imports.
 Files inside this folder can contain specific element styles and layout. 

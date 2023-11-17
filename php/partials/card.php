@@ -1,10 +1,8 @@
 
-
-
 <?php foreach($arrAllPokemons as $pokemon) { ?>
     <div class="card-container">
         <div class="card-img">
-            <img src="<?php echo $pokemon['image']; ?>" alt="Image de <?php echo $pokemon['nom']; ?>">
+            <img src="<?php echo '.' . $pokemon['image']; ?>" alt="Image de <?php echo $pokemon['nom']; ?>">
         </div>
         <div class="card-content">
             <p><?php echo idPokemonFormatted($pokemon['idPokemon']); ?></p>
@@ -30,3 +28,4 @@
         </div>
     </div>
 <?php } ?>
+

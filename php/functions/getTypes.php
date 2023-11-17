@@ -7,17 +7,15 @@ function getTypeName($idType) {
     return $typeName['type'];
 }
 function getTypeIcone($idType) {
-    require_once __DIR__.'/connectDB.php';
-    $bdd = connectDB();
+    $bdd = getBdd();
     $query = "SELECT icone FROM pokemontype WHERE idtype = $idType";
     $stmt = $bdd->query($query);
     $typeIcone = $stmt->fetch(PDO::FETCH_ASSOC);
     // echo $typeIcone['icone'];
-    return $typeIcone['icone'];
+    return '.' . $typeIcone['icone'];
 }
 function getTypeColor($idType) {
-    require_once __DIR__.'/connectDB.php';
-    $bdd = connectDB();
+    $bdd = getBdd();
     $query = "SELECT color FROM pokemontype WHERE idtype = $idType";
     $stmt = $bdd->query($query);
     $typeColor = $stmt->fetch(PDO::FETCH_ASSOC);

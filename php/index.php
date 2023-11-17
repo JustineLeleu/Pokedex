@@ -18,7 +18,7 @@ $arrAllPokemons = getPokemons();
 
 <?php 
 $title = "Home";
-require_once __DIR__.'/php/partials/header.php';
+require_once __DIR__.'/partials/header.php';
 ?>
 
 <main>
@@ -27,11 +27,11 @@ require_once __DIR__.'/php/partials/header.php';
     <a href="/pokemon?name=pikachu">Pikachu</a>
     <div class="pokemon-grid">
         <?php
-            require __DIR__.'/php/partials/card.php';
+            require __DIR__.'/partials/card.php';
         ?>
     </div>
 </main>
 
 <?php 
-require_once __DIR__.'/php/partials/footer.php';
+require_once __DIR__.'/partials/footer.php';
 ?>

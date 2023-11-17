@@ -31,3 +31,28 @@
         font-size: 2.5vh;
     }
 }
+
+.NewPkmn {
+    h2 {
+        font-family: 'Noto Sans JP';
+        font-weight: 900;
+        margin-bottom: 5vh;
+        }
+        .new {
+            font-family: 'Noto Sans JP';
+            font-weight: 700;
+            font-size: 3vh;
+        }
+        
+        select {
+            font-family: 'Noto Sans JP';
+            font-weight: 600;
+            font-size: 3vh;
+        }
+
+        .submit {
+            font-family: 'Noto Sans JP';
+            font-weight: 900;
+            font-size: 2.5vh;
+        }
+}
