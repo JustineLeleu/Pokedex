@@ -1,3 +1,7 @@
+<?php
+    include 'header.php';
+?>
+
 <link rel="stylesheet" href="../../css/style.css">
 
 
@@ -23,3 +27,7 @@
         </div>
     </div>
 </div>
+
+<?php
+    include 'footer.php';
+?>
