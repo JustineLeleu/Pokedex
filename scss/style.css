@@ -31,6 +31,15 @@ Files inside this folder can contain global styles used in the project.
   font-size: 2.5vh;
 }
 
+.good {
+  font-family: "Noto Sans JP";
+  font-weight: 900;
+  margin-bottom: 6vh;
+  color: rgb(84, 180, 84);
+  text-align: center;
+  margin-top: 3vh;
+}
+
 .register h2 {
   font-family: "Noto Sans JP";
   font-weight: 900;
@@ -52,6 +61,11 @@ Files inside this folder can contain global styles used in the project.
   margin-bottom: 5vh;
 }
 .NewPkmn .new {
+  font-family: "Noto Sans JP";
+  font-weight: 700;
+  font-size: 3vh;
+}
+.NewPkmn .infonewpkmn {
   font-family: "Noto Sans JP";
   font-weight: 700;
   font-size: 3vh;
