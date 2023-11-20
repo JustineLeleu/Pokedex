@@ -4,6 +4,7 @@
     @include display-flex-center-column;
     width: 90%;
     font-family: 'Noto Sans JP';
+    cursor: pointer;
     
     .card-img {
         width: clamp(100px, 35%, 200px);
