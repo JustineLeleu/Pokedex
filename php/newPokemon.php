@@ -20,7 +20,7 @@
             $speed=$_POST['pkmspeed'];
             $evo1=$_POST['pkmevo1'];
             $evo2=$_POST['pkmevo2'];
-            // $image=$_POST['pkmimage'];
+            $image=$_POST['pkmimage'];
 
             $id=filter_input(INPUT_POST, 'pkmid', FILTER_SANITIZE_NUMBER_INT);
             $name=filter_input(INPUT_POST, 'pkmname', FILTER_SANITIZE_STRING);
@@ -36,20 +36,27 @@
             $evo1=filter_input(INPUT_POST, 'pkmevo1', FILTER_SANITIZE_NUMBER_INT);
             $evo2=filter_input(INPUT_POST, 'pkmevo2', FILTER_SANITIZE_NUMBER_INT);
 
-            $image = $_FILES['pkmimage'];
-            if (isset($_FILES['pkmimage']) && $_FILES['pkmimage']['error'] === UPLOAD_ERR_OK) {
-                $uploadDir = './assets/img/pokemon/';
-                $uploadFile = $uploadDir . basename($_FILES['pkmimage']['name']);
-            
-                if (move_uploaded_file($_FILES['pkmimage']['tmp_name'], $uploadFile)) {
-                    $image = $uploadFile;
-                } else {
-                    // File upload failed
-                }
-            }
 
-            $stmt = $bdd->prepare('INSERT INTO pokemon (idPokemon, nom, type1, type2, hp, attack, defense, specific_attack, specific_defense, speed, evo1, evo2, image) VALUES (:idPokemon, :nom, :type1, :type2, :hp, :attack, :defense, :specific_attack, :specific_defense, :speed, :evo1, :evo2, :image)');
-            $stmt->execute([':idPokemon' => $id, ':nom' => $name, ':type1' => $type1, ':type2' => $type2, ':hp' => $hp, ':attack' => $attack, ':defense' => $defense, ':specific_attack' => $spatt, ':specific_defense' => $spedef, ':speed' => $speed, ':evo1' => $evo1, ':evo2' => $evo2, ':image' => $image]);
+            $stmt = "INSERT INTO pokemon (`idPokemon`, `nom`, `type1`, `type2`, `hp`, `attack`, `defense`, `specific_attack`, `specific_defense`, `speed`, `evo1`, `evo2`, `image`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $prep=$bdd->prepare($stmt);
+
+            $prep->bindValue(1, $id, PDO::PARAM_INT);
+            $prep->bindValue(2, $name, PDO::PARAM_STR);
+            $prep->bindValue(3, $type1, PDO::PARAM_STR);
+            $prep->bindValue(4, $type2, PDO::PARAM_STR);
+            $prep->bindValue(5, $hp, PDO::PARAM_INT);
+            $prep->bindValue(6, $attack, PDO::PARAM_INT);
+            $prep->bindValue(7, $defense, PDO::PARAM_INT);
+            $prep->bindValue(8, $spatt, PDO::PARAM_INT);
+            $prep->bindValue(9, $spedef, PDO::PARAM_INT);
+            $prep->bindValue(10, $speed, PDO::PARAM_INT);
+            $prep->bindValue(11, $evo1, PDO::PARAM_INT);
+            $prep->bindValue(12, $evo2, PDO::PARAM_INT);
+            $prep->bindValue(13, $image, PDO::PARAM_STR);
+
+            $prep->execute();
+            $prep->closeCursor();
+            $prep=NULL; 
 
             echo '<div class="entered">
             <h3 class="good">Yeah! Your new Pokemon has been added correctly!</h3>
@@ -144,7 +151,7 @@
             <input type="text" class="infonewpkmn" name="pkmevo2" id="pkmevo2">
 
             <label class="new" for="pkmimage">Pokemon Image:</label>
-            <input type="file" class="infonewpkmn" name="pkmimage" id="pkmimage" required>
+            <input type="text" class="infonewpkmn" name="pkmimage" id="pkmimage" required>
 
             <input class="submit" type="submit" name="submit" value="Add a Pokemon">
         </div>
