@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 20 nov. 2023 à 09:57
+-- Généré le : lun. 20 nov. 2023 à 11:04
 -- Version du serveur : 8.0.34
 -- Version de PHP : 8.0.26
 
@@ -100,7 +100,7 @@ INSERT INTO `pokemon` (`idPokemon`, `nom`, `type1`, `type2`, `hp`, `attack`, `de
 (1, 'Bulbasaur', 11, 12, 45, 55, 75, 43, 72, 37, 1, 2, 3, './assets/img/pokemon/bulbasaur.png'),
 (2, 'Ivysaur', 11, 12, 56, 60, 79, 67, 85, 21, 1, 2, 3, './assets/img/pokemon/ivysaur.png'),
 (3, 'Venusaur', 11, 12, 70, 62, 65, 56, 80, 25, 1, 2, 3, './assets/img/pokemon/venusaur.png'),
-(4, 'Charmender', 7, 0, 32, 56, 40, 32, 71, 30, 4, 5, 6, './assets/img/pokemon/charmender.png'),
+(4, 'Charmander', 7, 0, 32, 56, 40, 32, 71, 30, 4, 5, 6, './assets/img/pokemon/charmander.png'),
 (5, 'Charmeleon', 7, 0, 45, 72, 52, 45, 79, 50, 4, 5, 6, './assets/img/pokemon/charmeleon.png'),
 (6, 'Charizard', 7, 18, 54, 86, 74, 62, 84, 70, 4, 5, 6, './assets/img/pokemon/charizard.png'),
 (7, 'Squirtle', 4, 0, 32, 56, 40, 32, 71, 30, 7, 8, 9, './assets/img/pokemon/squirtle.png'),
