@@ -25,6 +25,12 @@
                     </div>
                 <?php } ?>
             </div>
+            <div class="fav-separate"></div>
+            <div class="fav-container">
+                <?php
+                    require __DIR__.'/favorite.php';
+                ?>
+            </div>
         </div>
     </div>
 <?php } ?>

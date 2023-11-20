@@ -1,12 +1,23 @@
-.addfav {
-    border: none;
-    background-color: white;
-    font-size: 20vh;
-    fill: #e5e7eb;
-    &:hover {
-        fill: yellow;
-    }
-    &:active {
-        fill:yellow;
+
+.fav {
+
+    .addfav {
+        // height: max-content;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        border: none;
+        background-color: white;
+        font-size: 10vh;
+        fill: #e5e7eb;
+        
+        &:hover {
+            fill: yellow;
+        }
+        &:active {
+            fill:yellow;
+        }
     }
 }
