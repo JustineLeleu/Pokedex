@@ -57,7 +57,12 @@
             $prep->execute();
             $prep->closeCursor();
             $prep=NULL; 
+
+            require "./functions/getBdd.php";
+            require "./functions/getPokemons.php";
+            require "./functions/getTypes.php";
             ?>
+
             <div class="card-container">
                 <div class="card-img">
                     <img src="<?php echo '.' . $image; ?>" alt="Image de <?php echo $name; ?>">
@@ -83,13 +88,31 @@
                             </div>
                         <?php } ?>
                     </div>
+
+                    <div
+                        class="infos-content">
+                        <h4 class="stats">HP: <?php echo $hp ?></h4>
+                        <h4 class="stats">Attaque: <?php echo $attack ?></h4>
+                        <h4 class="stats">Defense: <?php echo $defense ?></h4>
+                        <h4 class="stats">Special Attack: <?php echo $spatt ?></h4>
+                        <h4 class="stats">Special Defense: <?php echo $spedef ?></h4>
+                        <h4 class="stats">Speed: <?php echo $speed ?></h4>
+                    </div>
+
+                    <div
+                        class="evolutions">
+                        <h4 class="evo">First Evolution:<?php echo $evo1 ?></h4>
+                        <h4 class="evo">Second Evolution:<?php echo $evo2 ?></h4>
+                    </div>
                 </div>
             </div>
             <?php
             echo '
             <div class="entered">
-            <h3 class="good">Yeah! Your new Pokemon has been added correctly!</h3>
-            <button class="back"><a href="newPokemon.php">Back</a></button>
+            <h3 class="good">Yeah! Your new Pokemon has been added successfully!</h3>
+            <div class="buttons">
+                <button class="back"><a href="newPokemon.php">Nice, add more!</a></button><button class="modify"><a href="modifyPokemon.php">Oops, made a mistake</a></button>
+            </div>
             </div>';
             exit;
         }

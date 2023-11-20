@@ -45,16 +45,30 @@ body, main {
   margin-top: 3vh;
 }
 
-.entered .back {
+.entered .buttons .back {
   font-family: "Noto Sans JP";
   font-weight: 900;
   font-size: 2.5vh;
+  border: none;
 }
-.entered .back a {
+.entered .buttons .back a {
   text-decoration: none;
   color: black;
 }
-.entered .back a:hover {
+.entered .buttons .back a:hover {
+  color: yellow;
+}
+.entered .buttons .modify {
+  font-family: "Noto Sans JP";
+  font-weight: 900;
+  font-size: 2.5vh;
+  border: none;
+}
+.entered .buttons .modify a {
+  text-decoration: none;
+  color: black;
+}
+.entered .buttons .modify a:hover {
   color: yellow;
 }
 
@@ -279,14 +293,21 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 20vh;
+  margin-top: -500px;
+  margin-bottom: 50px;
 }
-.entered .back {
+.entered .buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 40vh;
+}
+.entered .buttons .back {
   padding: 2vh 10vh 2vh 10vh;
-  margin-top: 10vh;
+  margin-top: 5vh;
 }
-.entered a {
-  text-decoration: none;
+.entered .buttons .modify {
+  padding: 2vh 10vh 2vh 10vh;
+  margin-top: 5vh;
 }
 
 .NewPkmn {
@@ -320,6 +341,24 @@ body {
   border: none;
   width: 20vh;
   height: 10vh;
+}
+
+.card-container {
+  padding-top: 500px;
+}
+
+.infos-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5vh;
+  margin-bottom: 5vh;
+}
+
+.evolutions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15vh;
+  margin-bottom: 5vh;
 }
 
 /*
