@@ -13,8 +13,8 @@
     <header class="header">
         <img src="../assets/img/pokemon-logo.png" alt="Pokemon logo" class="logo">
         <nav class="nav">
-            <a href="" class="link">Pokemon</a>
-            <a href="" class="link">My account</a>
-            <a href="" class="link">Register</a>
+            <a href="index.php" class="link">Pokemon</a>
+            <a href="login.php" class="link">My account</a>
+            <a href="register.php" class="link">Register</a>
         </nav>
     </header>

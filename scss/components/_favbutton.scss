@@ -1,0 +1,12 @@
+.addfav {
+    border: none;
+    background-color: white;
+    font-size: 20vh;
+    fill: #e5e7eb;
+    &:hover {
+        fill: yellow;
+    }
+    &:active {
+        fill:yellow;
+    }
+}

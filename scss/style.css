@@ -31,6 +31,15 @@ Files inside this folder can contain global styles used in the project.
   font-size: 2.5vh;
 }
 
+.good {
+  font-family: "Noto Sans JP";
+  font-weight: 900;
+  margin-bottom: 6vh;
+  color: rgb(84, 180, 84);
+  text-align: center;
+  margin-top: 3vh;
+}
+
 .register h2 {
   font-family: "Noto Sans JP";
   font-weight: 900;
@@ -41,6 +50,32 @@ Files inside this folder can contain global styles used in the project.
   font-size: 3vh;
 }
 .register .submit {
+  font-family: "Noto Sans JP";
+  font-weight: 900;
+  font-size: 2.5vh;
+}
+
+.NewPkmn h2 {
+  font-family: "Noto Sans JP";
+  font-weight: 900;
+  margin-bottom: 5vh;
+}
+.NewPkmn .new {
+  font-family: "Noto Sans JP";
+  font-weight: 700;
+  font-size: 3vh;
+}
+.NewPkmn .infonewpkmn {
+  font-family: "Noto Sans JP";
+  font-weight: 700;
+  font-size: 3vh;
+}
+.NewPkmn select {
+  font-family: "Noto Sans JP";
+  font-weight: 600;
+  font-size: 3vh;
+}
+.NewPkmn .submit {
   font-family: "Noto Sans JP";
   font-weight: 900;
   font-size: 2.5vh;
@@ -93,9 +128,127 @@ body {
   height: 80vh;
   margin: 0 auto;
   margin-top: 10vh;
+  margin-bottom: 10vh;
 }
 
 .reginfo {
+  background-color: #E5E7EB;
+  border: none;
+  width: 80vh;
+  height: 7.5vh;
+  margin-bottom: 6vh;
+}
+
+.submit {
+  background-color: #E5E7EB;
+  border: none;
+  width: 20vh;
+  height: 10vh;
+}
+
+.card-container {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+}
+.card-container .card-img {
+  width: clamp(100px, 30%, 200px);
+  margin: 0 auto;
+}
+.card-container .card-img img {
+  position: relative;
+  top: 70px;
+  width: 100%;
+}
+.card-container .card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-height: 50vh;
+  width: 100%;
+  padding: 80px 30px 30px;
+  background-color: lightgrey;
+  border-radius: 15px;
+  box-shadow: 10px 10px 20px 1px rgb(164, 164, 164);
+}
+.card-container .card-content p {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.card-container .card-content h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  padding: 20px;
+}
+.card-container .card-content .card-type-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.card-container .card-content .card-type-container .card-type-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  padding: 5px 10px;
+}
+.card-container .card-content .card-type-container .card-type-content p {
+  padding-left: 10px;
+}
+.card-container .card-content .card-type-container .card-type-content img {
+  height: 30px;
+}
+
+@media only screen and (min-width: 400px) {
+  .card-container .card-content .card-type-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.addfav {
+  border: none;
+  background-color: white;
+  font-size: 20vh;
+  fill: #e5e7eb;
+}
+.addfav:hover {
+  fill: yellow;
+}
+.addfav:active {
+  fill: yellow;
+}
+
+.NewPkmn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 10px;
+  width: 100vh;
+  height: 280vh;
+  margin: 0 auto;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+.formulaire {
+  display: flex;
+  flex-direction: column;
+}
+
+.infonewpkmn {
   background-color: #E5E7EB;
   border: none;
   width: 80vh;

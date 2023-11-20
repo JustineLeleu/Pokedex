@@ -2,62 +2,59 @@
     @include position-center;
     @include display-flex-center-column;
     width: 90%;
+    font-family: 'Noto Sans JP';
+    
     .card-img {
-        width: clamp(100px, 30%, 200px);
+        width: clamp(100px, 35%, 200px);
         margin: 0 auto;
         img {
             position: relative;
-            top: 70px;
-            width: 100%
+            top: 50px;
+            width: 100%;
         }
     }
     .card-content {
         @include display-flex-center-column;
-        max-height: 50vh;
+        height: 70%;
         width: 100%;
-        padding: 80px 30px 30px;
-
-        background-color: lightgrey;
+        padding: 60px 30px 30px;
+        background-color: white;
         border-radius: 15px;
-        box-shadow: 10px 10px 20px 1px rgb(164, 164, 164);
+        // box-shadow: 10px 10px 20px 1px rgb(164, 164, 164);
+
         p {
             font-size: 1.5rem;
             font-weight: 600;
         }
+
         h2 {
             font-size: 2rem;
             font-weight: 800;
-            padding: 20px;
+            padding-bottom: 20px;
         }
 
         .card-type-container {
-            @include display-flex-center-column;
+            // @include display-flex-center-column;
+            @include display-flex-center-row;
+            flex-wrap: wrap;
+            
 
             .card-type-content {
                 @include display-flex-center-row;
-                margin: 0 10px;
-                padding: 5px 10px;
+                margin: 5px 10px;
+                padding: 5px 20px 5px 10px;
+                border-radius: 10px;
 
                 p {
                     padding-left: 10px;
+                    font-size: 1.1rem;
+                    font-weight: 900;
+                    color: white;
                 }
 
                 img {
                     height: 30px;
                 }
-            }
-        }
-    }
-}
-
-
-
-@media only screen and (min-width: 400px) {
-    .card-container {
-        .card-content {
-            .card-type-container {
-                @include display-flex-center-row;
-                // flex-direction: row;
             }
         }
     }
