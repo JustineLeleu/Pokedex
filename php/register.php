@@ -99,7 +99,7 @@ function validateAndSanitizeRegister(&$pseudo, &$email, &$password, &$passwordve
 
 function dataInjection($email, $password, $pseudo) {
     global $pdo;
-    echo "  test fonction dataInjection   ";
+    // echo "  test fonction dataInjection   ";
     try{
     //$sqlreq1 = $pdo->query("SELECT pseudo FROM pokedexuser WHERE pseudo = $pseudo")->fetch();
 
@@ -108,14 +108,20 @@ function dataInjection($email, $password, $pseudo) {
     $sqlreq1 = $pdo->query($query)->fetch();
     
     //$arr = $sqlreq1->execute();
-    echo "<script>console.log('$sqlreq1')</script>";
+    // echo "<script>console.log('$sqlreq1')</script>";
 
     if ($sqlreq1 != null) {
         echo "This email is already used";
     } else {
         echo 'test';
         $sqlreq2 = $pdo->prepare("INSERT INTO pokedexuser (pseudo, mail, passeword, admin) VALUES ('$pseudo', '$email', '$password', 0)");
-        $sqlreq2->execute();
+        if ($sqlreq2->execute())
+        {
+            $queryGetUser = "SELECT * FROM pokedexuser WHERE mail like '$email'";
+            $arr = $pdo->query($queryGetUser)->fetch();
+            $_SESSION["user"] = $arr['iduser'];
+            header("location: index.php");
+        }
     }
     } catch (PDOException $e) {
         echo $e->getMessage();

@@ -1,14 +1,12 @@
 .pokemon-grid {
     position: relative;
-    top: 150px;
+    padding-top: 220px;
     width: 90%;
     margin: 0 auto;
 }
 @media only screen and (min-width: 612px) {
     .pokemon-grid {
-        position: relative;
-        top: 0;
-        width: 90%;
+        padding-top: 0;
         display: grid;
         grid-template-columns: 50% 50%;
     }

@@ -1,8 +1,10 @@
 .card-container {
+
     @include position-center;
     @include display-flex-center-column;
     width: 90%;
     font-family: 'Noto Sans JP';
+    cursor: pointer;
     
     .card-img {
         width: clamp(100px, 35%, 200px);
@@ -17,7 +19,7 @@
         @include display-flex-center-column;
         height: 70%;
         width: 100%;
-        padding: 60px 30px 30px;
+        padding: 60px 30px 0px;
         background-color: white;
         border-radius: 15px;
         // box-shadow: 10px 10px 20px 1px rgb(164, 164, 164);
@@ -34,7 +36,8 @@
         }
 
         .card-type-container {
-            // @include display-flex-center-column;
+            position: relative;
+            z-index: 1;
             @include display-flex-center-row;
             flex-wrap: wrap;
             
@@ -57,5 +60,26 @@
                 }
             }
         }
+        .fav-separate {
+            width: 100%;
+            height: 0;
+        }
+        .fav-container {
+            position: relative;
+            height: 100px;
+            width: 100%;
+        }
+    }
+}
+@media only screen and (min-width: 612px) {
+    .card-container {
+        .card-content {
+            .card-type-container {
+                .fav-separate {
+                    height: 60%;
+                }
+            }
+        }
+
     }
 }

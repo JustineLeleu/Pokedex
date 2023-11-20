@@ -5,13 +5,21 @@
 require __DIR__.'/functions/getBdd.php';
 require __DIR__.'/functions/idPokemonFormatted.php';
 require __DIR__.'/functions/getTypes.php';
-
 require_once __DIR__.'/functions/getPokemons.php';
-$arrAllPokemons = getPokemons();
+require_once __DIR__.'/functions/getFilterPokemons.php';
+require __DIR__.'/functions/isFavorite.php';
 
-// echo '<pre>';
-// print_r($arrAllPokemons);
-// echo '</pre>';
+if (isset($_POST['search']))
+{
+    $arrAllPokemons = getFilterPokemons($_POST['search']);
+    echo "<script>console.log('search')</script>";
+}
+else
+{
+    $arrAllPokemons = getPokemons();
+    echo "<script>console.log('no search')</script>";
+}
+
 ?>
 
 
@@ -22,9 +30,10 @@ require_once __DIR__.'/partials/header.php';
 ?>
 
 <main>
-    <h1>Pokedex - Homepage</h1>
-    <p>Hello  <strong>Pikachu</strong></p>
-    <a href="/pokemon?name=pikachu">Pikachu</a>
+    <form action="index.php" method="post" class="searchBar">
+        <input type="text" placeholder="Pokemon" name="search" class="searchInput">
+        <input type="submit" value="Search" class="searchButton">
+    </form>
     <div class="pokemon-grid">
         <?php
             require __DIR__.'/partials/card.php';
