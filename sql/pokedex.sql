@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 16 nov. 2023 à 13:40
--- Version du serveur : 8.0.34
+-- Généré le : lun. 20 nov. 2023 à 08:46
+-- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -20,6 +20,26 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `pokedex`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `favorites_pokemon`
+--
+
+DROP TABLE IF EXISTS `favorites_pokemon`;
+CREATE TABLE IF NOT EXISTS `favorites_pokemon` (
+  `iduser` int NOT NULL,
+  `idPokemon` int NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `favorites_pokemon`
+--
+
+INSERT INTO `favorites_pokemon` (`iduser`, `idPokemon`) VALUES
+(1, 0),
+(1, 0);
 
 -- --------------------------------------------------------
 
@@ -59,8 +79,8 @@ CREATE TABLE IF NOT EXISTS `pokemon` (
   `hp` int DEFAULT NULL,
   `attack` int DEFAULT NULL,
   `defense` int DEFAULT NULL,
-  `specific attack` int DEFAULT NULL,
-  `specific defense` int DEFAULT NULL,
+  `specific_attack` int DEFAULT NULL,
+  `specific_defense` int DEFAULT NULL,
   `speed` int DEFAULT NULL,
   `evo1` int DEFAULT NULL,
   `evo2` int DEFAULT NULL,
@@ -71,18 +91,49 @@ CREATE TABLE IF NOT EXISTS `pokemon` (
 -- Déchargement des données de la table `pokemon`
 --
 
-INSERT INTO `pokemon` (`idPokemon`, `nom`, `type1`, `type2`, `hp`, `attack`, `defense`, `specific attack`, `specific defense`, `speed`, `evo1`, `evo2`, `image`) VALUES
+INSERT INTO `pokemon` (`idPokemon`, `nom`, `type1`, `type2`, `hp`, `attack`, `defense`, `specific_attack`, `specific_defense`, `speed`, `evo1`, `evo2`, `image`) VALUES
 (1, 'Bulbasaur', 11, 12, 45, 55, 75, 43, 72, 37, 2, 3, './assets/img/pokemon/bulbasaur.png'),
 (2, 'Ivysaur', 11, 12, 56, 60, 79, 67, 85, 21, 0, 3, './assets/img/pokemon/ivysaur.png'),
 (3, 'Venusaur', 11, 12, 70, 62, 65, 56, 80, 25, 0, 0, './assets/img/pokemon/venusaur.png'),
-(4, 'Charmender', 7, 0, 32, 56, 40, 32, 71, 30, 5, 6, './assets/img/pokemon/charmender.png'),
+(4, 'Charmander', 7, 0, 32, 56, 40, 32, 71, 30, 5, 6, './assets/img/pokemon/charmander.png'),
 (5, 'Charmeleon', 7, 0, 45, 72, 52, 45, 79, 50, 0, 6, './assets/img/pokemon/charmeleon.png'),
 (6, 'Charizard', 7, 18, 54, 86, 74, 62, 84, 70, 0, 0, './assets/img/pokemon/charizard.png'),
 (7, 'Squirtle', 4, 0, 32, 56, 40, 32, 71, 30, 8, 9, './assets/img/pokemon/squirtle.png'),
 (8, 'Wartortle', 4, 0, 45, 72, 52, 45, 79, 50, 0, 9, './assets/img/pokemon/wartortle.png'),
 (9, 'Blastoise', 4, 0, 54, 86, 74, 62, 84, 70, 0, 0, './assets/img/pokemon/blastoise.png'),
+(10, 'Caterpie', 9, 0, 50, 21, 18, 15, 12, 10, 11, 12, './assets/img/pokemon/caterpie.png'),
 (25, 'Pikachu', 5, 0, 32, 56, 40, 32, 71, 30, 26, 0, './assets/img/pokemon/pikachu.png'),
-(26, 'Raichu', 5, 0, 74, 86, 74, 62, 84, 70, 0, 0, './assets/img/pokemon/raichu.png');
+(26, 'Raichu', 5, 0, 74, 86, 74, 62, 84, 70, 0, 0, './assets/img/pokemon/raichu.png'),
+(11, 'Metapod', 9, 0, 38, 17, 20, 22, 25, 12, 10, 12, './assets/img/pokemon/metapod.png'),
+(12, 'Butterfree', 9, 18, 42, 30, 24, 32, 28, 31, 10, 11, './assets/img/pokemon/butterfree.png'),
+(12, 'Butterfree', 9, 18, 42, 30, 24, 32, 28, 31, 10, 11, './assets/img/pokemon/butterfree.png'),
+(12, 'Butterfree', 9, 18, 42, 30, 24, 32, 28, 31, 10, 11, './assets/img/pokemon/butterfree.png'),
+(12, 'Butterfree', 9, 18, 42, 30, 24, 32, 28, 31, 10, 11, './assets/img/pokemon/butterfree.png'),
+(12, 'Butterfree', 9, 18, 42, 30, 24, 32, 28, 31, 10, 11, './assets/img/pokemon/butterfree.png'),
+(12, 'Butterfree', 1, 0, 50, 30, 20, 62, 28, 14, 10, 11, './assets/img/pokemon/butterfree.png'),
+(12, 'Butterfree', 1, 0, 50, 30, 20, 62, 28, 14, 10, 11, './assets/img/pokemon/butterfree.png'),
+(12, 'Butterfree', 1, 0, 50, 30, 20, 62, 28, 14, 10, 11, './assets/img/pokemon/butterfree.png'),
+(12, 'Butterfree', 1, 0, 50, 30, 20, 62, 28, 14, 10, 11, './assets/img/pokemon/butterfree.png'),
+(12, 'Butterfree', 1, 0, 50, 30, 20, 62, 28, 14, 10, 11, './assets/img/pokemon/butterfree.png'),
+(12, 'Butterfree', 1, 0, 50, 30, 20, 62, 28, 14, 10, 11, './assets/img/pokemon/butterfree.png'),
+(12, 'Butterfree', 1, 0, 50, 30, 20, 62, 28, 14, 10, 11, './assets/img/pokemon/butterfree.png'),
+(12, 'Butterfree', 1, 0, 50, 30, 20, 62, 28, 14, 10, 11, './assets/img/pokemon/butterfree.png'),
+(12, 'Butterfree', 1, 0, 50, 30, 20, 62, 28, 14, 10, 11, './assets/img/pokemon/butterfree.png'),
+(12, 'Butterfree', 1, 0, 50, 30, 20, 62, 28, 14, 10, 11, './assets/img/pokemon/butterfree.png'),
+(12, 'Butterfree', 1, 0, 50, 30, 20, 62, 28, 14, 10, 11, './assets/img/pokemon/butterfree.png'),
+(12, 'Butterfree', 1, 0, 50, 30, 20, 62, 28, 14, 10, 11, './assets/img/pokemon/butterfree.png'),
+(12, 'Butterfree', 1, 0, 50, 30, 20, 62, 28, 14, 10, 11, './assets/img/pokemon/butterfree.png'),
+(12, 'Butterfree', 1, 0, 50, 30, 20, 62, 28, 14, 10, 11, './assets/img/pokemon/butterfree.png'),
+(12, 'Butterfree', 1, 0, 50, 30, 20, 62, 28, 14, 10, 11, './assets/img/pokemon/butterfree.png'),
+(12, 'Butterfree', 1, 0, 50, 30, 20, 62, 28, 14, 10, 11, './assets/img/pokemon/butterfree.png'),
+(12, 'Butterfree', 1, 0, 50, 30, 20, 62, 28, 14, 10, 11, './assets/img/pokemon/butterfree.png'),
+(12, 'Butterfree', 1, 0, 50, 30, 20, 62, 28, 14, 10, 11, './assets/img/pokemon/butterfree.png'),
+(13, 'Weedle', 9, 12, 29, 14, 13, 17, 16, 20, 14, 15, NULL),
+(13, 'Weedle', 9, 12, 29, 14, 13, 17, 16, 20, 14, 15, NULL),
+(13, 'Weedle', 9, 12, 19, 14, 13, 16, 17, 20, 14, 15, NULL),
+(13, 'Weedle', 9, 12, 19, 14, 15, 17, 19, 23, 14, 15, 'Array'),
+(13, 'Weedle', 9, 12, 14, 13, 15, 16, 17, 19, 14, 15, 'Array'),
+(13, 'Weedle', 9, 12, 14, 16, 17, 19, 21, 16, 14, 15, 'Array');
 
 -- --------------------------------------------------------
 

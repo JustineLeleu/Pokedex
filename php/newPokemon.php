@@ -20,20 +20,33 @@
             $speed=$_POST['pkmspeed'];
             $evo1=$_POST['pkmevo1'];
             $evo2=$_POST['pkmevo2'];
-            $image=$_POST['pkmimage'];
+            // $image=$_POST['pkmimage'];
 
-            $pkmid=filter_input(INPUT_POST, 'pkmid', FILTER_SANITIZE_NUMBER_INT);
-            $pkmname=filter_input(INPUT_POST, 'pkmname', FILTER_SANITIZE_STRING);
-            $pkmtype1=filter_input(INPUT_POST, 'pkmtype1', FILTER_SANITIZE_STRING);
+            $id=filter_input(INPUT_POST, 'pkmid', FILTER_SANITIZE_NUMBER_INT);
+            $name=filter_input(INPUT_POST, 'pkmname', FILTER_SANITIZE_STRING);
+            $type1=filter_input(INPUT_POST, 'pkmtype1', FILTER_SANITIZE_STRING);
+            $type2=filter_input(INPUT_POST, 'pkmtype2', FILTER_SANITIZE_STRING);
             
-            $pkhp=filter_input(INPUT_POST, 'pkmhp', FILTER_SANITIZE_NUMBER_INT);
-            $pkmattack=filter_input(INPUT_POST, 'pkmattack', FILTER_SANITIZE_NUMBER_INT);
-            $pkmspatt=filter_input(INPUT_POST, 'pkmspatt', FILTER_SANITIZE_NUMBER_INT);
-            $pkmspedef=filter_input(INPUT_POST, 'pkmspedef', FILTER_SANITIZE_NUMBER_INT);
-            $pkmspeed=filter_input(INPUT_POST, 'pkmspeed', FILTER_SANITIZE_NUMBER_INT);
+            $hp=filter_input(INPUT_POST, 'pkmhp', FILTER_SANITIZE_NUMBER_INT);
+            $attack=filter_input(INPUT_POST, 'pkmattack', FILTER_SANITIZE_NUMBER_INT);
+            $spatt=filter_input(INPUT_POST, 'pkmspatt', FILTER_SANITIZE_NUMBER_INT);
+            $spedef=filter_input(INPUT_POST, 'pkmspedef', FILTER_SANITIZE_NUMBER_INT);
+            $speed=filter_input(INPUT_POST, 'pkmspeed', FILTER_SANITIZE_NUMBER_INT);
             
-            $pkmevo1=filter_input(INPUT_POST, 'pkmevo1', FILTER_SANITIZE_NUMBER_INT);
-            $pkmevo2=filter_input(INPUT_POST, 'pkmevo2', FILTER_SANITIZE_NUMBER_INT);
+            $evo1=filter_input(INPUT_POST, 'pkmevo1', FILTER_SANITIZE_NUMBER_INT);
+            $evo2=filter_input(INPUT_POST, 'pkmevo2', FILTER_SANITIZE_NUMBER_INT);
+
+            $image = $_FILES['pkmimage'];
+            if (isset($_FILES['pkmimage']) && $_FILES['pkmimage']['error'] === UPLOAD_ERR_OK) {
+                $uploadDir = './assets/img/pokemon/';
+                $uploadFile = $uploadDir . basename($_FILES['pkmimage']['name']);
+            
+                if (move_uploaded_file($_FILES['pkmimage']['tmp_name'], $uploadFile)) {
+                    $image = $uploadFile;
+                } else {
+                    // File upload failed
+                }
+            }
 
             $stmt = $bdd->prepare('INSERT INTO pokemon (idPokemon, nom, type1, type2, hp, attack, defense, specific_attack, specific_defense, speed, evo1, evo2, image) VALUES (:idPokemon, :nom, :type1, :type2, :hp, :attack, :defense, :specific_attack, :specific_defense, :speed, :evo1, :evo2, :image)');
             $stmt->execute([':idPokemon' => $id, ':nom' => $name, ':type1' => $type1, ':type2' => $type2, ':hp' => $hp, ':attack' => $attack, ':defense' => $defense, ':specific_attack' => $spatt, ':specific_defense' => $spedef, ':speed' => $speed, ':evo1' => $evo1, ':evo2' => $evo2, ':image' => $image]);
@@ -52,7 +65,7 @@
 
 <div class="NewPkmn">
     <h2>New Pokemon</h2>
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
         <div class="formulaire">
             <label class="new" for="pkmid">Pokemon official ID:</label>
             <input type="text" class="infonewpkmn" name="pkmid" id="id" required>
@@ -131,7 +144,7 @@
             <input type="text" class="infonewpkmn" name="pkmevo2" id="pkmevo2">
 
             <label class="new" for="pkmimage">Pokemon Image:</label>
-            <input type="text" class="infonewpkmn" name="pkmimage" id="pkmimage" required>
+            <input type="file" class="infonewpkmn" name="pkmimage" id="pkmimage" required>
 
             <input class="submit" type="submit" name="submit" value="Add a Pokemon">
         </div>
