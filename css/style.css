@@ -16,6 +16,11 @@ Files inside this folder can contain global styles used in the project.
   box-sizing: border-box;
 }
 
+body, main {
+  margin: 0;
+  width: 100%;
+}
+
 .login h2 {
   font-family: "Noto Sans JP";
   font-weight: 900;
@@ -114,6 +119,7 @@ body {
   height: 80vh;
   margin: 0 auto;
   margin-top: 10vh;
+  margin-bottom: 10vh;
 }
 
 .reginfo {
@@ -141,14 +147,15 @@ body {
   align-items: center;
   justify-content: center;
   width: 90%;
+  font-family: "Noto Sans JP";
 }
 .card-container .card-img {
-  width: clamp(100px, 30%, 200px);
+  width: clamp(100px, 35%, 200px);
   margin: 0 auto;
 }
 .card-container .card-img img {
   position: relative;
-  top: 70px;
+  top: 50px;
   width: 100%;
 }
 .card-container .card-content {
@@ -156,12 +163,11 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-height: 50vh;
+  height: 70%;
   width: 100%;
-  padding: 80px 30px 30px;
-  background-color: lightgrey;
+  padding: 60px 30px 30px;
+  background-color: white;
   border-radius: 15px;
-  box-shadow: 10px 10px 20px 1px rgb(164, 164, 164);
 }
 .card-container .card-content p {
   font-size: 1.5rem;
@@ -170,13 +176,14 @@ body {
 .card-container .card-content h2 {
   font-size: 2rem;
   font-weight: 800;
-  padding: 20px;
+  padding-bottom: 20px;
 }
 .card-container .card-content .card-type-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .card-container .card-content .card-type-container .card-type-content {
   display: flex;
@@ -184,54 +191,41 @@ body {
   align-items: center;
   justify-content: center;
   margin: 5px 10px;
-  padding: 5px 10px;
+  padding: 5px 20px 5px 10px;
   border-radius: 10px;
 }
 .card-container .card-content .card-type-container .card-type-content p {
   padding-left: 10px;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: white;
 }
 .card-container .card-content .card-type-container .card-type-content img {
   height: 30px;
 }
 
-@media only screen and (min-width: 400px) {
-  .card-container .card-content .card-type-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-  .card-container .card-content .card-type-container .card-type-content {
-    margin: 0 10px;
-  }
-}
-@media only screen and (min-width: 612px) {
-  .card-container {
-    width: 80%;
-  }
-}
-@media only screen and (min-width: 612px) {
-  .card-container {
-    width: 80%;
-  }
-}
 .pokemon-grid {
   position: relative;
   top: 150px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 @media only screen and (min-width: 612px) {
   .pokemon-grid {
     position: relative;
     top: 0;
+    width: 90%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50% 50%;
   }
 }
 @media only screen and (min-width: 1024px) {
   .pokemon-grid {
+    width: 80%;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 33%);
   }
 }
 .addfav {
@@ -258,6 +252,7 @@ body {
   height: 280vh;
   margin: 0 auto;
   margin-top: 10vh;
+  margin-bottom: 10vh;
 }
 
 .formulaire {
