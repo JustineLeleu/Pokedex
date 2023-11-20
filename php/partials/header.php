@@ -11,7 +11,7 @@
 </head>
 <body>
     <header class="header">
-        <img src="/assets/img/pokemon-logo.png" alt="Pokemon logo" class="logo">
+        <img src="../assets/img/pokemon-logo.png" alt="Pokemon logo" class="logo">
         <nav class="nav">
             <a href="index.php" class="link">Pokemon</a>
             <a href="login.php" class="link">My account</a>

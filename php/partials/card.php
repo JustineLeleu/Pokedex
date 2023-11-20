@@ -1,6 +1,6 @@
 
 <?php foreach($arrAllPokemons as $pokemon) { ?>
-    <div class="card-container">
+    <div class="card-container" onclick="location.href='infos.php?id=<?php echo $pokemon['idPokemon']; ?>';">
         <div class="card-img">
             <img src="<?php echo '.' . $pokemon['image']; ?>" alt="Image de <?php echo $pokemon['nom']; ?>">
         </div>
