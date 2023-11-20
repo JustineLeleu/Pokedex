@@ -22,18 +22,33 @@
             $evo2=$_POST['pkmevo2'];
             $image=$_POST['pkmimage'];
 
+            $pkmid=filter_input(INPUT_POST, 'pkmid', FILTER_SANITIZE_NUMBER_INT);
+            $pkmname=filter_input(INPUT_POST, 'pkmname', FILTER_SANITIZE_STRING);
+            $pkmtype1=filter_input(INPUT_POST, 'pkmtype1', FILTER_SANITIZE_STRING);
+            
+            $pkhp=filter_input(INPUT_POST, 'pkmhp', FILTER_SANITIZE_NUMBER_INT);
+            $pkmattack=filter_input(INPUT_POST, 'pkmattack', FILTER_SANITIZE_NUMBER_INT);
+            $pkmspatt=filter_input(INPUT_POST, 'pkmspatt', FILTER_SANITIZE_NUMBER_INT);
+            $pkmspedef=filter_input(INPUT_POST, 'pkmspedef', FILTER_SANITIZE_NUMBER_INT);
+            $pkmspeed=filter_input(INPUT_POST, 'pkmspeed', FILTER_SANITIZE_NUMBER_INT);
+            
+            $pkmevo1=filter_input(INPUT_POST, 'pkmevo1', FILTER_SANITIZE_NUMBER_INT);
+            $pkmevo2=filter_input(INPUT_POST, 'pkmevo2', FILTER_SANITIZE_NUMBER_INT);
+
             $stmt = $bdd->prepare('INSERT INTO pokemon (idPokemon, nom, type1, type2, hp, attack, defense, specific_attack, specific_defense, speed, evo1, evo2, image) VALUES (:idPokemon, :nom, :type1, :type2, :hp, :attack, :defense, :specific_attack, :specific_defense, :speed, :evo1, :evo2, :image)');
             $stmt->execute([':idPokemon' => $id, ':nom' => $name, ':type1' => $type1, ':type2' => $type2, ':hp' => $hp, ':attack' => $attack, ':defense' => $defense, ':specific_attack' => $spatt, ':specific_defense' => $spedef, ':speed' => $speed, ':evo1' => $evo1, ':evo2' => $evo2, ':image' => $image]);
 
-            echo '<h3 class="good">Yeah! Your new Pokemon has been added correctly!</h3>';
+            echo '<div class="entered">
+            <h3 class="good">Yeah! Your new Pokemon has been added correctly!</h3>
+            <button class="back"><a href="newPokemon.php">Back</a></button>
+            </div>';
+            exit;
         }
 
     } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
     }
 ?>
-
-
 
 <div class="NewPkmn">
     <h2>New Pokemon</h2>
