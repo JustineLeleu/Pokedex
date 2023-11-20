@@ -1,7 +1,7 @@
 <?php
     require_once __DIR__.'./partials/header.php';
 
-    $pdo = new PDO('mysql:host=localhost;dbname=pokedex', 'root', 'root');
+    $pdo = new PDO('mysql:host=localhost;dbname=pokedex', 'root', '');
 ?>
 <main>
     <div class="register">
