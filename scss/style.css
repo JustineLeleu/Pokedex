@@ -16,6 +16,11 @@ Files inside this folder can contain global styles used in the project.
   box-sizing: border-box;
 }
 
+body, main {
+  margin: 0;
+  width: 100%;
+}
+
 .login h2 {
   font-family: "Noto Sans JP";
   font-weight: 900;
@@ -40,16 +45,30 @@ Files inside this folder can contain global styles used in the project.
   margin-top: 3vh;
 }
 
-.entered .back {
+.entered .buttons .back {
   font-family: "Noto Sans JP";
   font-weight: 900;
   font-size: 2.5vh;
+  border: none;
 }
-.entered .back a {
+.entered .buttons .back a {
   text-decoration: none;
   color: black;
 }
-.entered .back a:hover {
+.entered .buttons .back a:hover {
+  color: yellow;
+}
+.entered .buttons .modify {
+  font-family: "Noto Sans JP";
+  font-weight: 900;
+  font-size: 2.5vh;
+  border: none;
+}
+.entered .buttons .modify a {
+  text-decoration: none;
+  color: black;
+}
+.entered .buttons .modify a:hover {
   color: yellow;
 }
 
@@ -92,6 +111,15 @@ Files inside this folder can contain global styles used in the project.
   font-family: "Noto Sans JP";
   font-weight: 900;
   font-size: 2.5vh;
+}
+
+.update {
+  font-family: "Noto Sans JP";
+  font-weight: 900;
+  margin-bottom: 6vh;
+  color: rgb(84, 180, 84);
+  text-align: center;
+  margin-top: 3vh;
 }
 
 /*
@@ -169,14 +197,16 @@ body {
   align-items: center;
   justify-content: center;
   width: 90%;
+  font-family: "Noto Sans JP";
+  cursor: pointer;
 }
 .card-container .card-img {
-  width: clamp(100px, 30%, 200px);
+  width: clamp(100px, 35%, 200px);
   margin: 0 auto;
 }
 .card-container .card-img img {
   position: relative;
-  top: 70px;
+  top: 50px;
   width: 100%;
 }
 .card-container .card-content {
@@ -184,12 +214,11 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-height: 50vh;
+  height: 70%;
   width: 100%;
-  padding: 80px 30px 30px;
-  background-color: lightgrey;
+  padding: 60px 30px 0px;
+  background-color: white;
   border-radius: 15px;
-  box-shadow: 10px 10px 20px 1px rgb(164, 164, 164);
 }
 .card-container .card-content p {
   font-size: 1.5rem;
@@ -198,13 +227,16 @@ body {
 .card-container .card-content h2 {
   font-size: 2rem;
   font-weight: 800;
-  padding: 20px;
+  padding-bottom: 20px;
 }
 .card-container .card-content .card-type-container {
+  position: relative;
+  z-index: 1;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .card-container .card-content .card-type-container .card-type-content {
   display: flex;
@@ -212,66 +244,69 @@ body {
   align-items: center;
   justify-content: center;
   margin: 5px 10px;
-  padding: 5px 10px;
+  padding: 5px 20px 5px 10px;
   border-radius: 10px;
 }
 .card-container .card-content .card-type-container .card-type-content p {
   padding-left: 10px;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: white;
 }
 .card-container .card-content .card-type-container .card-type-content img {
   height: 30px;
 }
+.card-container .card-content .fav-separate {
+  width: 100%;
+  height: 0;
+}
+.card-container .card-content .fav-container {
+  position: relative;
+  height: 100px;
+  width: 100%;
+}
 
-@media only screen and (min-width: 400px) {
-  .card-container .card-content .card-type-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-  .card-container .card-content .card-type-container .card-type-content {
-    margin: 0 10px;
-  }
-}
 @media only screen and (min-width: 612px) {
-  .card-container {
-    width: 80%;
-  }
-}
-@media only screen and (min-width: 612px) {
-  .card-container {
-    width: 80%;
+  .card-container .card-content .card-type-container .fav-separate {
+    height: 60%;
   }
 }
 .pokemon-grid {
   position: relative;
-  top: 150px;
+  padding-top: 220px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 @media only screen and (min-width: 612px) {
   .pokemon-grid {
-    position: relative;
-    top: 0;
+    padding-top: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50% 50%;
   }
 }
 @media only screen and (min-width: 1024px) {
   .pokemon-grid {
+    width: 80%;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 33%);
   }
 }
-.addfav {
+.fav .addfav {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   border: none;
   background-color: white;
-  font-size: 20vh;
+  font-size: 10vh;
   fill: #e5e7eb;
 }
-.addfav:hover {
+.fav .addfav:hover {
   fill: yellow;
 }
-.addfav:active {
+.fav .addfav:active {
   fill: yellow;
 }
 
@@ -286,14 +321,21 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 20vh;
+  margin-top: -500px;
+  margin-bottom: 50px;
 }
-.entered .back {
+.entered .buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 40vh;
+}
+.entered .buttons .back {
   padding: 2vh 10vh 2vh 10vh;
-  margin-top: 10vh;
+  margin-top: 5vh;
 }
-.entered a {
-  text-decoration: none;
+.entered .buttons .modify {
+  padding: 2vh 10vh 2vh 10vh;
+  margin-top: 5vh;
 }
 
 .NewPkmn {
@@ -329,79 +371,83 @@ body {
   height: 10vh;
 }
 
-<<<<<<< HEAD
-=======
 .card-container {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 90%;
-}
-.card-container .card-img {
-  width: clamp(100px, 30%, 200px);
-  margin: 0 auto;
-}
-.card-container .card-img img {
-  position: relative;
-  top: 70px;
-  width: 100%;
-}
-.card-container .card-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-height: 50vh;
-  width: 100%;
-  padding: 80px 30px 30px;
-  background-color: lightgrey;
-  border-radius: 15px;
-  box-shadow: 10px 10px 20px 1px rgb(164, 164, 164);
-}
-.card-container .card-content p {
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-.card-container .card-content h2 {
-  font-size: 2rem;
-  font-weight: 800;
-  padding: 20px;
-}
-.card-container .card-content .card-type-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.card-container .card-content .card-type-container .card-type-content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin: 0 10px;
-  padding: 5px 10px;
-}
-.card-container .card-content .card-type-container .card-type-content p {
-  padding-left: 10px;
-}
-.card-container .card-content .card-type-container .card-type-content img {
-  height: 30px;
+  padding-top: 500px;
 }
 
-@media only screen and (min-width: 400px) {
-  .card-container .card-content .card-type-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
+.infos-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5vh;
+  margin-bottom: 5vh;
 }
->>>>>>> dev
+
+.evolutions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15vh;
+  margin-bottom: 5vh;
+}
+
+.searchBar {
+  width: 100vw;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.searchBar .searchInput {
+  width: 60%;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 18px;
+  border: none;
+  box-shadow: 0px 0px 2px 0px #e5e7eb;
+  border-radius: 5px 0px 0px 5px;
+  padding: 5px;
+}
+.searchBar .searchButton {
+  width: 10%;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 18px;
+  background-color: rgb(72, 72, 72);
+  color: white;
+  border: none;
+  box-shadow: 0px 0px 2px 0px #e5e7eb;
+  border-radius: 0px 5px 5px 0px;
+  padding: 5px;
+}
+.searchBar .searchButton:hover {
+  background-color: rgb(40, 40, 40);
+  color: white;
+}
+
+.updates {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.updates .back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  color: #f3f4f6;
+  font-family: "Noto Sans JP";
+  font-weight: 900;
+  font-size: 2.5vh;
+  border: none;
+  padding: 2vh 10vh 2vh 10vh;
+  margin: 2vh 0vh 5vh 0vh;
+}
+.updates .back a {
+  text-decoration: none;
+  color: black;
+}
+.updates .back a:hover {
+  color: yellow;
+}
+
 /*
 This file is used to contain all component imports.
 Files inside this folder can contain specific element styles and layout. 
@@ -421,7 +467,7 @@ body {
 }
 .header .nav {
   background-color: white;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -451,14 +497,17 @@ body {
 }
 
 .footer {
-  display: flex;
-  justify-content: center;
-  font-size: 8px;
+  padding: 0px 50px 20px;
+}
+.footer p {
+  font-family: "Noto Sans JP";
+  font-size: 1rem;
+  text-align: center;
 }
 
-@media screen and (min-width: 425px) {
+@media screen and (min-width: 612px) {
   .footer {
-    font-size: 12px;
+    padding: 50px;
   }
 }
 .infosContainer {
@@ -466,7 +515,8 @@ body {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
   font-family: "Noto Sans JP", sans-serif;
-  margin: 2% 10% 2% 10%;
+  padding: 2% 10% 2% 10%;
+  width: 100vw;
 }
 .infosContainer .infos {
   background-color: white;
@@ -491,9 +541,6 @@ body {
 .infosContainer .infos .stats .stat {
   display: flex;
   flex-direction: column;
-}
-.infosContainer .infos .stats .stat .slider {
-  accent-color: #e5e7eb;
 }
 .infosContainer .infos .evolutions {
   display: flex;

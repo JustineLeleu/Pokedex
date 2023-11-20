@@ -22,26 +22,99 @@
             $evo2=$_POST['pkmevo2'];
             $image=$_POST['pkmimage'];
 
-            $pkmid=filter_input(INPUT_POST, 'pkmid', FILTER_SANITIZE_NUMBER_INT);
-            $pkmname=filter_input(INPUT_POST, 'pkmname', FILTER_SANITIZE_STRING);
-            $pkmtype1=filter_input(INPUT_POST, 'pkmtype1', FILTER_SANITIZE_STRING);
+            $id=filter_input(INPUT_POST, 'pkmid', FILTER_SANITIZE_NUMBER_INT);
+            $name=filter_input(INPUT_POST, 'pkmname', FILTER_SANITIZE_STRING);
+            $type1=filter_input(INPUT_POST, 'pkmtype1', FILTER_SANITIZE_STRING);
+            $type2=filter_input(INPUT_POST, 'pkmtype2', FILTER_SANITIZE_STRING);
             
-            $pkhp=filter_input(INPUT_POST, 'pkmhp', FILTER_SANITIZE_NUMBER_INT);
-            $pkmattack=filter_input(INPUT_POST, 'pkmattack', FILTER_SANITIZE_NUMBER_INT);
-            $pkmspatt=filter_input(INPUT_POST, 'pkmspatt', FILTER_SANITIZE_NUMBER_INT);
-            $pkmspedef=filter_input(INPUT_POST, 'pkmspedef', FILTER_SANITIZE_NUMBER_INT);
-            $pkmspeed=filter_input(INPUT_POST, 'pkmspeed', FILTER_SANITIZE_NUMBER_INT);
+            $hp=filter_input(INPUT_POST, 'pkmhp', FILTER_SANITIZE_NUMBER_INT);
+            $attack=filter_input(INPUT_POST, 'pkmattack', FILTER_SANITIZE_NUMBER_INT);
+            $spatt=filter_input(INPUT_POST, 'pkmspatt', FILTER_SANITIZE_NUMBER_INT);
+            $spedef=filter_input(INPUT_POST, 'pkmspedef', FILTER_SANITIZE_NUMBER_INT);
+            $speed=filter_input(INPUT_POST, 'pkmspeed', FILTER_SANITIZE_NUMBER_INT);
             
-            $pkmevo1=filter_input(INPUT_POST, 'pkmevo1', FILTER_SANITIZE_NUMBER_INT);
-            $pkmevo2=filter_input(INPUT_POST, 'pkmevo2', FILTER_SANITIZE_NUMBER_INT);
+            $evo1=filter_input(INPUT_POST, 'pkmevo1', FILTER_SANITIZE_NUMBER_INT);
+            $evo2=filter_input(INPUT_POST, 'pkmevo2', FILTER_SANITIZE_NUMBER_INT);
 
-            $stmt = $bdd->prepare('INSERT INTO pokemon (idPokemon, nom, type1, type2, hp, attack, defense, specific_attack, specific_defense, speed, evo1, evo2, image) VALUES (:idPokemon, :nom, :type1, :type2, :hp, :attack, :defense, :specific_attack, :specific_defense, :speed, :evo1, :evo2, :image)');
-            $stmt->execute([':idPokemon' => $id, ':nom' => $name, ':type1' => $type1, ':type2' => $type2, ':hp' => $hp, ':attack' => $attack, ':defense' => $defense, ':specific_attack' => $spatt, ':specific_defense' => $spedef, ':speed' => $speed, ':evo1' => $evo1, ':evo2' => $evo2, ':image' => $image]);
 
-            echo '<div class="entered">
-            <h3 class="good">Yeah! Your new Pokemon has been added correctly!</h3>
-            <button class="back"><a href="newPokemon.php">Back</a></button>
-            </div>';
+            $stmt = "INSERT INTO pokemon (`idPokemon`, `nom`, `type1`, `type2`, `hp`, `attack`, `defense`, `specific_attack`, `specific_defense`, `speed`, `evo1`, `evo2`, `image`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $prep=$bdd->prepare($stmt);
+
+            $prep->bindValue(1, $id, PDO::PARAM_INT);
+            $prep->bindValue(2, $name, PDO::PARAM_STR);
+            $prep->bindValue(3, $type1, PDO::PARAM_STR);
+            $prep->bindValue(4, $type2, PDO::PARAM_STR);
+            $prep->bindValue(5, $hp, PDO::PARAM_INT);
+            $prep->bindValue(6, $attack, PDO::PARAM_INT);
+            $prep->bindValue(7, $defense, PDO::PARAM_INT);
+            $prep->bindValue(8, $spatt, PDO::PARAM_INT);
+            $prep->bindValue(9, $spedef, PDO::PARAM_INT);
+            $prep->bindValue(10, $speed, PDO::PARAM_INT);
+            $prep->bindValue(11, $evo1, PDO::PARAM_INT);
+            $prep->bindValue(12, $evo2, PDO::PARAM_INT);
+            $prep->bindValue(13, $image, PDO::PARAM_STR);
+
+            $prep->execute();
+            $prep->closeCursor();
+            $prep=NULL; 
+
+            require "./functions/getBdd.php";
+            require "./functions/getPokemons.php";
+            require "./functions/getTypes.php";
+            ?>
+
+            <div class="card-container">
+                <div class="card-img">
+                    <img src="<?php echo '.' . $image; ?>" alt="Image de <?php echo $name; ?>">
+                </div>
+                <div class="card-content">
+                    <p><?php echo $id; ?></p>
+                    <h2>
+                        <?php echo $name; ?>
+                    </h2>
+                    <div class="card-type-container">
+                        <div 
+                            class="card-type-content"
+                            style="background-color: <?php echo getTypeColor($type1); ?>;">
+                            <img src="<?php echo getTypeIcone($type1); ?>" alt="Type grass">
+                            <p><?php echo getTypeName($type1); ?></p>
+                        </div>
+                        <?php if ($type2 != 0) { ?>
+                            <div 
+                                class="card-type-content"
+                                style="background-color: <?php echo getTypeColor($type2); ?>;">
+                                <img src="<?php echo getTypeIcone($type2); ?>" alt="Type poison">
+                                <p><?php echo getTypeName($type2); ?></p>
+                            </div>
+                        <?php } ?>
+                    </div>
+
+                    <div
+                        class="infos-content">
+                        <h4 class="stats">HP: <?php echo $hp ?></h4>
+                        <h4 class="stats">Attaque: <?php echo $attack ?></h4>
+                        <h4 class="stats">Defense: <?php echo $defense ?></h4>
+                        <h4 class="stats">Special Attack: <?php echo $spatt ?></h4>
+                        <h4 class="stats">Special Defense: <?php echo $spedef ?></h4>
+                        <h4 class="stats">Speed: <?php echo $speed ?></h4>
+                    </div>
+
+                    <div
+                        class="evolutions">
+                        <h4 class="evo">First Evolution:<?php echo $evo1 ?></h4>
+                        <h4 class="evo">Second Evolution:<?php echo $evo2 ?></h4>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='entered'>
+            <h3 class='good'>Yeah! Your new Pokemon has been added successfully!</h3>
+            <div class='buttons'>
+                <button class='back'><a href='newPokemon.php'>Nice, add more!</a></button>
+                <button class='modify'><a href="modifyPokemon.php?sendId=<?php echo $id; ?>" >Oops, made a mistake</a></button>
+            </div>;
+            <?php
+            echo $id;
             exit;
         }
 
@@ -52,7 +125,7 @@
 
 <div class="NewPkmn">
     <h2>New Pokemon</h2>
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
         <div class="formulaire">
             <label class="new" for="pkmid">Pokemon official ID:</label>
             <input type="text" class="infonewpkmn" name="pkmid" id="id" required>

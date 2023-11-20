@@ -25,17 +25,36 @@
 }
 
 .entered {
-    .back {
-        font-family: 'Noto Sans JP';
-        font-weight: 900;
-        font-size: 2.5vh;
+    .buttons {
+        .back {
+            font-family: 'Noto Sans JP';
+            font-weight: 900;
+            font-size: 2.5vh;
+            border: none;
 
-        a {
-            text-decoration: none;
-            color: black;
-            &:hover {
-                color: yellow;
-    
+            a {
+                text-decoration: none;
+                color: black;
+                &:hover {
+                    color: yellow;
+        
+                }
+            }
+        }
+
+        .modify {
+            font-family: 'Noto Sans JP';
+            font-weight: 900;
+            font-size: 2.5vh;
+            border: none;
+
+            a {
+                text-decoration: none;
+                color: black;
+                &:hover {
+                    color: yellow;
+        
+                }
             }
         }
     }
@@ -87,4 +106,13 @@
             font-weight: 900;
             font-size: 2.5vh;
         }
+}
+
+.update {
+    font-family: 'Noto Sans JP';
+    font-weight: 900;
+    margin-bottom: 6vh;
+    color: rgb(84, 180, 84);
+    text-align: center;
+    margin-top: 3vh;
 }

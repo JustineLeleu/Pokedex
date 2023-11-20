@@ -10,16 +10,24 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 20vh;
+    margin-top:-500px;
+    margin-bottom: 50px;
 
-    .back {
-        padding: 2vh 10vh 2vh 10vh;
-        margin-top: 10vh;
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        gap:40vh;
+
+        .back {
+            padding: 2vh 10vh 2vh 10vh;
+            margin-top: 5vh;
+        }
+        .modify {
+            padding: 2vh 10vh 2vh 10vh;
+            margin-top: 5vh;
+        }
     }
 
-    a {
-        text-decoration: none;
-    }
 }
 
 
@@ -54,4 +62,21 @@
     border: none;
     width: 20vh;
     height: 10vh;
+}
+
+.card-container {
+    padding-top: 500px;
+}
+.infos-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap:5vh;
+    margin-bottom: 5vh;
+}
+
+.evolutions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15vh;
+    margin-bottom: 5vh;
 }
