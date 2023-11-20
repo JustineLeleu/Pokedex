@@ -166,7 +166,8 @@ body {
   background-color: white;
   border-radius: 10px;
   width: 100vh;
-  height: 150vh;
+  height: 100vh;
+  box-sizing: border-box;
   margin: 0 auto;
   margin-top: 10vh;
   margin-bottom: 10vh;
