@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 16 nov. 2023 à 13:40
+-- Généré le : lun. 20 nov. 2023 à 09:57
 -- Version du serveur : 8.0.34
 -- Version de PHP : 8.0.26
 
@@ -24,6 +24,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `favorites_pokemon`
+--
+
+DROP TABLE IF EXISTS `favorites_pokemon`;
+CREATE TABLE IF NOT EXISTS `favorites_pokemon` (
+  `iduser` int NOT NULL,
+  `idPokemon` int NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `favorites_pokemon`
+--
+
+INSERT INTO `favorites_pokemon` (`iduser`, `idPokemon`) VALUES
+(1, 0),
+(1, 0);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `pokedexuser`
 --
 
@@ -34,7 +54,9 @@ CREATE TABLE IF NOT EXISTS `pokedexuser` (
   `mail` varchar(45) DEFAULT NULL,
   `passeword` varchar(45) DEFAULT NULL,
   `admin` tinyint DEFAULT NULL,
-  PRIMARY KEY (`iduser`)
+  PRIMARY KEY (`iduser`),
+  UNIQUE KEY `pseudo` (`pseudo`),
+  UNIQUE KEY `mail` (`mail`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -59,30 +81,33 @@ CREATE TABLE IF NOT EXISTS `pokemon` (
   `hp` int DEFAULT NULL,
   `attack` int DEFAULT NULL,
   `defense` int DEFAULT NULL,
-  `specific attack` int DEFAULT NULL,
-  `specific defense` int DEFAULT NULL,
+  `specific_attack` int DEFAULT NULL,
+  `specific_defense` int DEFAULT NULL,
   `speed` int DEFAULT NULL,
   `evo1` int DEFAULT NULL,
   `evo2` int DEFAULT NULL,
-  `image` varchar(45) DEFAULT NULL
+  `evo3` int NOT NULL,
+  `image` varchar(45) DEFAULT NULL,
+  UNIQUE KEY `idPokemon` (`idPokemon`),
+  UNIQUE KEY `nom` (`nom`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `pokemon`
 --
 
-INSERT INTO `pokemon` (`idPokemon`, `nom`, `type1`, `type2`, `hp`, `attack`, `defense`, `specific attack`, `specific defense`, `speed`, `evo1`, `evo2`, `image`) VALUES
-(1, 'Bulbasaur', 11, 12, 45, 55, 75, 43, 72, 37, 2, 3, './assets/img/pokemon/bulbasaur.png'),
-(2, 'Ivysaur', 11, 12, 56, 60, 79, 67, 85, 21, 0, 3, './assets/img/pokemon/ivysaur.png'),
-(3, 'Venusaur', 11, 12, 70, 62, 65, 56, 80, 25, 0, 0, './assets/img/pokemon/venusaur.png'),
-(4, 'Charmender', 7, 0, 32, 56, 40, 32, 71, 30, 5, 6, './assets/img/pokemon/charmender.png'),
-(5, 'Charmeleon', 7, 0, 45, 72, 52, 45, 79, 50, 0, 6, './assets/img/pokemon/charmeleon.png'),
-(6, 'Charizard', 7, 18, 54, 86, 74, 62, 84, 70, 0, 0, './assets/img/pokemon/charizard.png'),
-(7, 'Squirtle', 4, 0, 32, 56, 40, 32, 71, 30, 8, 9, './assets/img/pokemon/squirtle.png'),
-(8, 'Wartortle', 4, 0, 45, 72, 52, 45, 79, 50, 0, 9, './assets/img/pokemon/wartortle.png'),
-(9, 'Blastoise', 4, 0, 54, 86, 74, 62, 84, 70, 0, 0, './assets/img/pokemon/blastoise.png'),
-(25, 'Pikachu', 5, 0, 32, 56, 40, 32, 71, 30, 26, 0, './assets/img/pokemon/pikachu.png'),
-(26, 'Raichu', 5, 0, 74, 86, 74, 62, 84, 70, 0, 0, './assets/img/pokemon/raichu.png');
+INSERT INTO `pokemon` (`idPokemon`, `nom`, `type1`, `type2`, `hp`, `attack`, `defense`, `specific_attack`, `specific_defense`, `speed`, `evo1`, `evo2`, `evo3`, `image`) VALUES
+(1, 'Bulbasaur', 11, 12, 45, 55, 75, 43, 72, 37, 1, 2, 3, './assets/img/pokemon/bulbasaur.png'),
+(2, 'Ivysaur', 11, 12, 56, 60, 79, 67, 85, 21, 1, 2, 3, './assets/img/pokemon/ivysaur.png'),
+(3, 'Venusaur', 11, 12, 70, 62, 65, 56, 80, 25, 1, 2, 3, './assets/img/pokemon/venusaur.png'),
+(4, 'Charmender', 7, 0, 32, 56, 40, 32, 71, 30, 4, 5, 6, './assets/img/pokemon/charmender.png'),
+(5, 'Charmeleon', 7, 0, 45, 72, 52, 45, 79, 50, 4, 5, 6, './assets/img/pokemon/charmeleon.png'),
+(6, 'Charizard', 7, 18, 54, 86, 74, 62, 84, 70, 4, 5, 6, './assets/img/pokemon/charizard.png'),
+(7, 'Squirtle', 4, 0, 32, 56, 40, 32, 71, 30, 7, 8, 9, './assets/img/pokemon/squirtle.png'),
+(8, 'Wartortle', 4, 0, 45, 72, 52, 45, 79, 50, 7, 8, 9, './assets/img/pokemon/wartortle.png'),
+(9, 'Blastoise', 4, 0, 54, 86, 74, 62, 84, 70, 7, 8, 9, './assets/img/pokemon/blastoise.png'),
+(25, 'Pikachu', 5, 0, 32, 56, 40, 32, 71, 30, 25, 26, 0, './assets/img/pokemon/pikachu.png'),
+(26, 'Raichu', 5, 0, 74, 86, 74, 62, 84, 70, 25, 26, 0, './assets/img/pokemon/raichu.png');
 
 -- --------------------------------------------------------
 
