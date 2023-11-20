@@ -5,7 +5,9 @@ Files inside this folder should contain all styles relating to a reusable compon
 
 //Import Component files
 
-@import '_login';
-
-@import '_register';
+@import 'login';
+@import 'register';
 @import 'card';
+@import 'pokemon-grid';
+@import 'favbutton';
+@import 'newpkmn';

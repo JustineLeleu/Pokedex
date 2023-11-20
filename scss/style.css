@@ -31,6 +31,28 @@ Files inside this folder can contain global styles used in the project.
   font-size: 2.5vh;
 }
 
+.good {
+  font-family: "Noto Sans JP";
+  font-weight: 900;
+  margin-bottom: 6vh;
+  color: rgb(84, 180, 84);
+  text-align: center;
+  margin-top: 3vh;
+}
+
+.entered .back {
+  font-family: "Noto Sans JP";
+  font-weight: 900;
+  font-size: 2.5vh;
+}
+.entered .back a {
+  text-decoration: none;
+  color: black;
+}
+.entered .back a:hover {
+  color: yellow;
+}
+
 .register h2 {
   font-family: "Noto Sans JP";
   font-weight: 900;
@@ -41,6 +63,32 @@ Files inside this folder can contain global styles used in the project.
   font-size: 3vh;
 }
 .register .submit {
+  font-family: "Noto Sans JP";
+  font-weight: 900;
+  font-size: 2.5vh;
+}
+
+.NewPkmn h2 {
+  font-family: "Noto Sans JP";
+  font-weight: 900;
+  margin-bottom: 5vh;
+}
+.NewPkmn .new {
+  font-family: "Noto Sans JP";
+  font-weight: 700;
+  font-size: 3vh;
+}
+.NewPkmn .infonewpkmn {
+  font-family: "Noto Sans JP";
+  font-weight: 700;
+  font-size: 3vh;
+}
+.NewPkmn select {
+  font-family: "Noto Sans JP";
+  font-weight: 600;
+  font-size: 3vh;
+}
+.NewPkmn .submit {
   font-family: "Noto Sans JP";
   font-weight: 900;
   font-size: 2.5vh;
@@ -93,6 +141,7 @@ body {
   height: 80vh;
   margin: 0 auto;
   margin-top: 10vh;
+  margin-bottom: 10vh;
 }
 
 .reginfo {
@@ -162,8 +211,14 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
   margin: 0 10px;
   padding: 5px 10px;
+=======
+  margin: 5px 10px;
+  padding: 5px 10px;
+  border-radius: 10px;
+>>>>>>> rosa
 }
 .card-container .card-content .card-type-container .card-type-content p {
   padding-left: 10px;
@@ -179,7 +234,110 @@ body {
     align-items: center;
     justify-content: center;
   }
+<<<<<<< HEAD
 }
+=======
+  .card-container .card-content .card-type-container .card-type-content {
+    margin: 0 10px;
+  }
+}
+@media only screen and (min-width: 612px) {
+  .card-container {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 612px) {
+  .card-container {
+    width: 80%;
+  }
+}
+.pokemon-grid {
+  position: relative;
+  top: 150px;
+}
+
+@media only screen and (min-width: 612px) {
+  .pokemon-grid {
+    position: relative;
+    top: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .pokemon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.addfav {
+  border: none;
+  background-color: white;
+  font-size: 20vh;
+  fill: #e5e7eb;
+}
+.addfav:hover {
+  fill: yellow;
+}
+.addfav:active {
+  fill: yellow;
+}
+
+.back {
+  align-items: center;
+  border: none;
+  color: #f3f4f6;
+}
+
+.entered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20vh;
+}
+.entered .back {
+  padding: 2vh 10vh 2vh 10vh;
+  margin-top: 10vh;
+}
+.entered a {
+  text-decoration: none;
+}
+
+.NewPkmn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 10px;
+  width: 100vh;
+  height: 280vh;
+  margin: 0 auto;
+  margin-top: 10vh;
+}
+
+.formulaire {
+  display: flex;
+  flex-direction: column;
+}
+
+.infonewpkmn {
+  background-color: #E5E7EB;
+  border: none;
+  width: 80vh;
+  height: 7.5vh;
+  margin-bottom: 6vh;
+}
+
+.submit {
+  background-color: #E5E7EB;
+  border: none;
+  width: 20vh;
+  height: 10vh;
+}
+
+>>>>>>> rosa
 /*
 This file is used to contain all component imports.
 Files inside this folder can contain specific element styles and layout. 

@@ -16,14 +16,15 @@
         max-height: 50vh;
         width: 100%;
         padding: 80px 30px 30px;
-
         background-color: lightgrey;
         border-radius: 15px;
         box-shadow: 10px 10px 20px 1px rgb(164, 164, 164);
+
         p {
             font-size: 1.5rem;
             font-weight: 600;
         }
+
         h2 {
             font-size: 2rem;
             font-weight: 800;
@@ -32,11 +33,13 @@
 
         .card-type-container {
             @include display-flex-center-column;
+            
 
             .card-type-content {
                 @include display-flex-center-row;
-                margin: 0 10px;
+                margin: 5px 10px;
                 padding: 5px 10px;
+                border-radius: 10px;
 
                 p {
                     padding-left: 10px;
@@ -57,8 +60,21 @@
         .card-content {
             .card-type-container {
                 @include display-flex-center-row;
-                // flex-direction: row;
+                .card-type-content {
+                    margin: 0 10px;
+                }
             }
         }
+    }
+}
+
+@media only screen and (min-width: 612px) {
+    .card-container {
+        width: 80%
+    }
+}
+@media only screen and (min-width: 612px) {
+    .card-container {
+        width: 80%
     }
 }
