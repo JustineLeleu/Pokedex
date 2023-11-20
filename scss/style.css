@@ -113,6 +113,15 @@ body, main {
   font-size: 2.5vh;
 }
 
+.update {
+  font-family: "Noto Sans JP";
+  font-weight: 900;
+  margin-bottom: 6vh;
+  color: rgb(84, 180, 84);
+  text-align: center;
+  margin-top: 3vh;
+}
+
 /*
 This file is used to contain all component imports.
 Files inside this folder should contain all styles relating to a reusable component.
@@ -359,6 +368,33 @@ body {
   flex-wrap: wrap;
   gap: 15vh;
   margin-bottom: 5vh;
+}
+
+.updates {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.updates .back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  color: #f3f4f6;
+  font-family: "Noto Sans JP";
+  font-weight: 900;
+  font-size: 2.5vh;
+  border: none;
+  padding: 2vh 10vh 2vh 10vh;
+  margin: 2vh 0vh 5vh 0vh;
+}
+.updates .back a {
+  text-decoration: none;
+  color: black;
+}
+.updates .back a:hover {
+  color: yellow;
 }
 
 /*

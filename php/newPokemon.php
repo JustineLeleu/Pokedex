@@ -106,14 +106,15 @@
                     </div>
                 </div>
             </div>
+            
+            <div class='entered'>
+            <h3 class='good'>Yeah! Your new Pokemon has been added successfully!</h3>
+            <div class='buttons'>
+                <button class='back'><a href='newPokemon.php'>Nice, add more!</a></button>
+                <button class='modify'><a href="modifyPokemon.php?sendId=<?php echo $id; ?>" >Oops, made a mistake</a></button>
+            </div>;
             <?php
-            echo '
-            <div class="entered">
-            <h3 class="good">Yeah! Your new Pokemon has been added successfully!</h3>
-            <div class="buttons">
-                <button class="back"><a href="newPokemon.php">Nice, add more!</a></button><button class="modify"><a href="modifyPokemon.php">Oops, made a mistake</a></button>
-            </div>
-            </div>';
+            echo $id;
             exit;
         }
 
