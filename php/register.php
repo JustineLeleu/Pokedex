@@ -1,7 +1,7 @@
 <?php
     require_once __DIR__.'./partials/header.php';
 
-    $pdo = new PDO('mysql:host=localhost;dbname=pokedex', 'root', 'root');
+    $pdo = new PDO('mysql:host=localhost;dbname=pokedex', 'root', '');
 ?>
 <main>
     <div class="register">
@@ -101,16 +101,20 @@ function dataInjection($email, $password, $pseudo) {
     global $pdo;
     echo "  test fonction dataInjection   ";
     try{
-    $sqlreq1 = $pdo->query("SELECT pseudo FROM pokedexuser WHERE pseudo =git  $pseudo")->fetch();
+    //$sqlreq1 = $pdo->query("SELECT pseudo FROM pokedexuser WHERE pseudo = $pseudo")->fetch();
+
+    echo "<script>console.log('$pseudo')</script>";
+    $query = "SELECT * FROM pokedexuser WHERE pseudo LIKE '%$pseudo%'";
+    $sqlreq1 = $pdo->query($query)->fetch();
+    
     //$arr = $sqlreq1->execute();
-    echo "<script>console.log($sqlreq1)</script>";
+    echo "<script>console.log('$sqlreq1')</script>";
 
     if ($sqlreq1 != null) {
         echo "This email is already used";
     } else {
         echo 'test';
-        $sqlreq2 = $pdo->prepare("INSERT INTO `pokedexuser`(`pseudo`, `mail`, `passeword`, `admin`) 
-        VALUES ($pseudo, $password, '$email', 0)");
+        $sqlreq2 = $pdo->prepare("INSERT INTO pokedexuser (pseudo, mail, passeword, admin) VALUES ('$pseudo', '$email', '$password', 0)");
         $sqlreq2->execute();
     }
     } catch (PDOException $e) {

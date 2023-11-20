@@ -238,4 +238,66 @@ body {
   .footer {
     font-size: 12px;
   }
+}
+.infosContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  font-family: "Noto Sans JP", sans-serif;
+  margin: 2% 10% 2% 10%;
+}
+.infosContainer .infos {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px 0px #e5e7eb;
+  padding: 20px;
+}
+.infosContainer .infos .types {
+  display: flex;
+  gap: 10px;
+}
+.infosContainer .infos .types .card-type-content {
+  background-color: green;
+  display: flex;
+  border-radius: 5px;
+  padding: 2px;
+  gap: 5px;
+}
+.infosContainer .infos .types .card-type-content img {
+  width: 20px;
+}
+.infosContainer .infos .stats .stat {
+  display: flex;
+  flex-direction: column;
+}
+.infosContainer .infos .stats .stat .slider {
+  accent-color: #e5e7eb;
+}
+.infosContainer .infos .evolutions {
+  display: flex;
+  justify-content: space-around;
+}
+.infosContainer .infos .evolutions .evolution img {
+  width: 50px;
+  background-color: #e5e7eb;
+  border-radius: 25px;
+}
+.infosContainer .infoImage {
+  position: relative;
+}
+.infosContainer .infoImage img {
+  position: absolute;
+  width: 300px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.infosContainer .infoImage .num {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, -50%);
+  color: #e5e7eb;
+  font-size: 150px;
+  font-weight: 800;
 }/*# sourceMappingURL=style.css.map */
