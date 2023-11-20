@@ -289,6 +289,38 @@ body {
   height: 10vh;
 }
 
+.searchBar {
+  width: 100vw;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.searchBar .searchInput {
+  width: 60%;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 18px;
+  border: none;
+  box-shadow: 0px 0px 2px 0px #e5e7eb;
+  border-radius: 5px 0px 0px 5px;
+  padding: 5px;
+}
+.searchBar .searchButton {
+  width: 10%;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 18px;
+  background-color: rgb(72, 72, 72);
+  color: white;
+  border: none;
+  box-shadow: 0px 0px 2px 0px #e5e7eb;
+  border-radius: 0px 5px 5px 0px;
+  padding: 5px;
+}
+.searchBar .searchButton:hover {
+  background-color: rgb(40, 40, 40);
+  color: white;
+}
+
 /*
 This file is used to contain all component imports.
 Files inside this folder can contain specific element styles and layout. 
