@@ -40,6 +40,19 @@ Files inside this folder can contain global styles used in the project.
   margin-top: 3vh;
 }
 
+.entered .back {
+  font-family: "Noto Sans JP";
+  font-weight: 900;
+  font-size: 2.5vh;
+}
+.entered .back a {
+  text-decoration: none;
+  color: black;
+}
+.entered .back a:hover {
+  color: yellow;
+}
+
 .register h2 {
   font-family: "Noto Sans JP";
   font-weight: 900;
@@ -198,8 +211,9 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin: 0 10px;
+  margin: 5px 10px;
   padding: 5px 10px;
+  border-radius: 10px;
 }
 .card-container .card-content .card-type-container .card-type-content p {
   padding-left: 10px;
@@ -215,6 +229,38 @@ body {
     align-items: center;
     justify-content: center;
   }
+  .card-container .card-content .card-type-container .card-type-content {
+    margin: 0 10px;
+  }
+}
+@media only screen and (min-width: 612px) {
+  .card-container {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 612px) {
+  .card-container {
+    width: 80%;
+  }
+}
+.pokemon-grid {
+  position: relative;
+  top: 150px;
+}
+
+@media only screen and (min-width: 612px) {
+  .pokemon-grid {
+    position: relative;
+    top: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .pokemon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 .addfav {
   border: none;
@@ -229,6 +275,27 @@ body {
   fill: yellow;
 }
 
+.back {
+  align-items: center;
+  border: none;
+  color: #f3f4f6;
+}
+
+.entered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20vh;
+}
+.entered .back {
+  padding: 2vh 10vh 2vh 10vh;
+  margin-top: 10vh;
+}
+.entered a {
+  text-decoration: none;
+}
+
 .NewPkmn {
   display: flex;
   flex-direction: column;
@@ -240,7 +307,6 @@ body {
   height: 280vh;
   margin: 0 auto;
   margin-top: 10vh;
-  margin-bottom: 10vh;
 }
 
 .formulaire {
