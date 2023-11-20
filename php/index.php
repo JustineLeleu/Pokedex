@@ -7,6 +7,7 @@ require __DIR__.'/functions/idPokemonFormatted.php';
 require __DIR__.'/functions/getTypes.php';
 require_once __DIR__.'/functions/getPokemons.php';
 require_once __DIR__.'/functions/getFilterPokemons.php';
+require __DIR__.'/functions/isFavorite.php';
 
 if (isset($_POST['search']))
 {
