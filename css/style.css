@@ -179,7 +179,7 @@ body {
   justify-content: center;
   height: 70%;
   width: 100%;
-  padding: 60px 30px 30px;
+  padding: 60px 30px 0px;
   background-color: white;
   border-radius: 15px;
 }
@@ -193,6 +193,8 @@ body {
   padding-bottom: 20px;
 }
 .card-container .card-content .card-type-container {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -217,7 +219,21 @@ body {
 .card-container .card-content .card-type-container .card-type-content img {
   height: 30px;
 }
+.card-container .card-content .fav-separate {
+  width: 100%;
+  height: 0;
+}
+.card-container .card-content .fav-container {
+  position: relative;
+  height: 100px;
+  width: 100%;
+}
 
+@media only screen and (min-width: 612px) {
+  .card-container .card-content .card-type-container .fav-separate {
+    height: 60%;
+  }
+}
 .pokemon-grid {
   position: relative;
   top: 150px;
@@ -242,16 +258,20 @@ body {
     grid-template-columns: repeat(3, 33%);
   }
 }
-.addfav {
+.fav .addfav {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   border: none;
   background-color: white;
-  font-size: 20vh;
+  font-size: 10vh;
   fill: #e5e7eb;
 }
-.addfav:hover {
+.fav .addfav:hover {
   fill: yellow;
 }
-.addfav:active {
+.fav .addfav:active {
   fill: yellow;
 }
 
