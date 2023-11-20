@@ -57,8 +57,37 @@
             $prep->execute();
             $prep->closeCursor();
             $prep=NULL; 
-
-            echo '<div class="entered">
+            ?>
+            <div class="card-container">
+                <div class="card-img">
+                    <img src="<?php echo '.' . $image; ?>" alt="Image de <?php echo $name; ?>">
+                </div>
+                <div class="card-content">
+                    <p><?php echo $id; ?></p>
+                    <h2>
+                        <?php echo $name; ?>
+                    </h2>
+                    <div class="card-type-container">
+                        <div 
+                            class="card-type-content"
+                            style="background-color: <?php echo getTypeColor($type1); ?>;">
+                            <img src="<?php echo getTypeIcone($type1); ?>" alt="Type grass">
+                            <p><?php echo getTypeName($type1); ?></p>
+                        </div>
+                        <?php if ($type2 != 0) { ?>
+                            <div 
+                                class="card-type-content"
+                                style="background-color: <?php echo getTypeColor($type2); ?>;">
+                                <img src="<?php echo getTypeIcone($type2); ?>" alt="Type poison">
+                                <p><?php echo getTypeName($type2); ?></p>
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+            <?php
+            echo '
+            <div class="entered">
             <h3 class="good">Yeah! Your new Pokemon has been added correctly!</h3>
             <button class="back"><a href="newPokemon.php">Back</a></button>
             </div>';
