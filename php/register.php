@@ -101,7 +101,7 @@ function dataInjection($email, $password, $pseudo) {
     global $pdo;
     echo "  test fonction dataInjection   ";
     try{
-    $sqlreq1 = $pdo->query("SELECT pseudo FROM pokedexuser WHERE pseudo = $pseudo")->fetch();
+    $sqlreq1 = $pdo->query("SELECT pseudo FROM pokedexuser WHERE pseudo =git  $pseudo")->fetch();
     //$arr = $sqlreq1->execute();
     echo "<script>console.log($sqlreq1)</script>";
 
