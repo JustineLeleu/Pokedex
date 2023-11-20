@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 20 nov. 2023 à 11:04
+-- Généré le : lun. 20 nov. 2023 à 13:59
 -- Version du serveur : 8.0.34
 -- Version de PHP : 8.0.26
 
@@ -54,6 +54,8 @@ CREATE TABLE IF NOT EXISTS `pokedexuser` (
   `mail` varchar(45) DEFAULT NULL,
   `passeword` varchar(45) DEFAULT NULL,
   `admin` tinyint DEFAULT NULL,
+  `description` text,
+  `idphoto` int NOT NULL,
   PRIMARY KEY (`iduser`),
   UNIQUE KEY `pseudo` (`pseudo`),
   UNIQUE KEY `mail` (`mail`)
@@ -63,8 +65,8 @@ CREATE TABLE IF NOT EXISTS `pokedexuser` (
 -- Déchargement des données de la table `pokedexuser`
 --
 
-INSERT INTO `pokedexuser` (`iduser`, `pseudo`, `mail`, `passeword`, `admin`) VALUES
-(1, 'Boss', 'boss@gmail.com', 'rootroot', 1);
+INSERT INTO `pokedexuser` (`iduser`, `pseudo`, `mail`, `passeword`, `admin`, `description`, `idphoto`) VALUES
+(1, 'Boss', 'boss@gmail.com', 'rootroot', 1, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -147,6 +149,144 @@ INSERT INTO `pokemontype` (`idtype`, `type`, `color`, `icone`) VALUES
 (16, 'SPECTRE', '#713f71', './assets/img/type/ghost.svg'),
 (17, 'TENEBRE', '#4d3f3b', './assets/img/type/dark.svg'),
 (18, 'VOL', '#82baef', './assets/img/type/flying.svg');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `strengthstype`
+--
+
+DROP TABLE IF EXISTS `strengthstype`;
+CREATE TABLE IF NOT EXISTS `strengthstype` (
+  `idtype` tinyint NOT NULL,
+  `idstength` tinyint NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `strengthstype`
+--
+
+INSERT INTO `strengthstype` (`idtype`, `idstength`) VALUES
+(1, 6),
+(1, 8),
+(1, 14),
+(2, 1),
+(2, 8),
+(2, 10),
+(2, 14),
+(2, 17),
+(3, 3),
+(3, 14),
+(3, 15),
+(4, 7),
+(5, 4),
+(5, 18),
+(6, 2),
+(6, 3),
+(6, 17),
+(7, 1),
+(7, 8),
+(7, 9),
+(7, 11),
+(8, 3),
+(8, 11),
+(8, 15),
+(8, 18),
+(9, 11),
+(9, 13),
+(9, 17),
+(11, 4),
+(11, 14),
+(11, 15),
+(12, 6),
+(12, 11),
+(13, 2),
+(13, 12),
+(14, 7),
+(14, 8),
+(14, 9),
+(14, 18),
+(15, 1),
+(15, 5),
+(15, 7),
+(15, 12),
+(15, 14),
+(16, 13),
+(16, 16),
+(17, 13),
+(17, 16),
+(18, 2),
+(18, 9),
+(18, 11);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `weaknessestype`
+--
+
+DROP TABLE IF EXISTS `weaknessestype`;
+CREATE TABLE IF NOT EXISTS `weaknessestype` (
+  `idtype` tinyint NOT NULL,
+  `idweaknesses` tinyint NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `weaknessestype`
+--
+
+INSERT INTO `weaknessestype` (`idtype`, `idweaknesses`) VALUES
+(1, 2),
+(1, 7),
+(1, 15),
+(2, 6),
+(2, 18),
+(2, 13),
+(3, 3),
+(3, 6),
+(3, 8),
+(4, 5),
+(4, 11),
+(5, 15),
+(6, 1),
+(6, 12),
+(7, 4),
+(7, 14),
+(7, 15),
+(8, 1),
+(8, 2),
+(8, 7),
+(8, 14),
+(9, 7),
+(9, 14),
+(9, 18),
+(10, 2),
+(11, 7),
+(11, 8),
+(11, 9),
+(11, 12),
+(11, 18),
+(12, 13),
+(12, 15),
+(13, 9),
+(13, 16),
+(13, 17),
+(14, 1),
+(14, 2),
+(14, 4),
+(14, 11),
+(14, 15),
+(15, 4),
+(15, 8),
+(15, 11),
+(16, 16),
+(16, 17),
+(17, 2),
+(17, 6),
+(17, 9),
+(18, 5),
+(18, 8),
+(18, 14);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
