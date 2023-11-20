@@ -36,6 +36,15 @@ body, main {
   font-size: 2.5vh;
 }
 
+.good {
+  font-family: "Noto Sans JP";
+  font-weight: 900;
+  margin-bottom: 6vh;
+  color: rgb(84, 180, 84);
+  text-align: center;
+  margin-top: 3vh;
+}
+
 .register h2 {
   font-family: "Noto Sans JP";
   font-weight: 900;
@@ -57,6 +66,11 @@ body, main {
   margin-bottom: 5vh;
 }
 .NewPkmn .new {
+  font-family: "Noto Sans JP";
+  font-weight: 700;
+  font-size: 3vh;
+}
+.NewPkmn .infonewpkmn {
   font-family: "Noto Sans JP";
   font-weight: 700;
   font-size: 3vh;
@@ -275,6 +289,38 @@ body {
   height: 10vh;
 }
 
+.searchBar {
+  width: 100vw;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.searchBar .searchInput {
+  width: 60%;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 18px;
+  border: none;
+  box-shadow: 0px 0px 2px 0px #e5e7eb;
+  border-radius: 5px 0px 0px 5px;
+  padding: 5px;
+}
+.searchBar .searchButton {
+  width: 10%;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 18px;
+  background-color: rgb(72, 72, 72);
+  color: white;
+  border: none;
+  box-shadow: 0px 0px 2px 0px #e5e7eb;
+  border-radius: 0px 5px 5px 0px;
+  padding: 5px;
+}
+.searchBar .searchButton:hover {
+  background-color: rgb(40, 40, 40);
+  color: white;
+}
+
 /*
 This file is used to contain all component imports.
 Files inside this folder can contain specific element styles and layout. 
@@ -339,7 +385,8 @@ body {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
   font-family: "Noto Sans JP", sans-serif;
-  margin: 2% 10% 2% 10%;
+  padding: 2% 10% 2% 10%;
+  width: 100vw;
 }
 .infosContainer .infos {
   background-color: white;
@@ -364,9 +411,6 @@ body {
 .infosContainer .infos .stats .stat {
   display: flex;
   flex-direction: column;
-}
-.infosContainer .infos .stats .stat .slider {
-  accent-color: #e5e7eb;
 }
 .infosContainer .infos .evolutions {
   display: flex;
