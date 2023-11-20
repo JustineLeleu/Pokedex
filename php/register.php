@@ -115,7 +115,13 @@ function dataInjection($email, $password, $pseudo) {
     } else {
         echo 'test';
         $sqlreq2 = $pdo->prepare("INSERT INTO pokedexuser (pseudo, mail, passeword, admin) VALUES ('$pseudo', '$email', '$password', 0)");
-        $sqlreq2->execute();
+        if ($sqlreq2->execute())
+        {
+            $queryGetUser = "SELECT * FROM pokedexuser WHERE mail like '$email'";
+            $arr = $pdo->query($queryGetUser)->fetch();
+            $_SESSION["user"] = $arr['iduser'];
+            header("location: index.php");
+        }
     }
     } catch (PDOException $e) {
         echo $e->getMessage();
