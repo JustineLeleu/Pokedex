@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+$isLogin = false;
+
+if (isset($_SESSION['user']))
+{
+    $isLogin = true;
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +27,9 @@
         <img src="../assets/img/pokemon-logo.png" alt="Pokemon logo" class="logo">
         <nav class="nav">
             <a href="index.php" class="link">Pokemon</a>
-            <a href="login.php" class="link">My account</a>
-            <a href="register.php" class="link">Register</a>
+            <a href="" class="link" <?php echo $isLogin ? '' : 'hidden' ; ?>>My account</a>
+            <a href="logout.php" class="link" <?php echo $isLogin ? '' : 'hidden' ; ?>>Logout</a>
+            <a href="register.php" class="link" <?php echo $isLogin ? 'hidden' : '' ; ?>>Register</a>
+            <a href="login.php" class="link" <?php echo $isLogin ? 'hidden' : '' ; ?>>Login</a>
         </nav>
     </header>
